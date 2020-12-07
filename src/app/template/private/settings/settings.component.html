@@ -1,0 +1,87 @@
+<div class="settings-container" fxLayout.gt-sm="row"  fxLayout.lt-md="column"
+(swipeleft)="navigateTo()">
+<!--    -->
+<!--  LARGER THAN MD  -->
+<!--    -->
+    <div class="p-0 settings"
+         fxHide.lt-md
+         ngClass.gt-sm="col-3">
+        <div (click)="changeTitle('User Settings')" class="py-4 px-3 item" fxLayout="row" fxLayoutAlign="start center"
+             fxLayoutGap="15px"
+             routerLink="/settings/user"
+        >
+            <span class="material-icons">person</span>
+            <span>Account</span>
+        </div>
+        <div (click)="changeTitle('Privacy Settings')" class="py-4 px-3 item" fxLayout="row" fxLayoutAlign="start center"
+             fxLayoutGap="15px"
+             routerLink="/settings/privacy"
+        >
+            <span class="material-icons">security</span>
+            <span>Privacy</span>
+        </div>
+    </div>
+
+    <div class="col-9 p-0 form-content" fxHide.lt-md>
+        <div class="w-100 pl-4" fxLayoutAlign="start center" style="height: 74px; border-bottom: 1px solid #d1d1d1;">
+            <h1 class="m-0">{{title}}</h1>
+        </div>
+        <div class="p-4 w-100 h-75">
+            <div class="w-100 h-100">
+                <ng-container *ngIf="!settingsOutlet.isActivated">
+                    <div class="settings-content w-100">
+                        <h4>Account</h4>
+                    </div>
+                </ng-container>
+                <router-outlet #settingsOutlet="outlet"></router-outlet>
+            </div>
+        </div>
+    </div>
+
+    <!--    -->
+    <!--  END LARGER THAN MD  -->
+    <!--    -->
+
+    <!--    -->
+    <!--  SMALLER THAN MD  -->
+    <!--    -->
+    <div *ngIf="!showOutlet"
+            class="p-0 settings"
+         fxHide.gt-sm
+         ngClass.lt-md="col-12">
+        <div (click)="changeTitle('Profile Editor')" class="py-4 px-3 item" fxLayout="row" fxLayoutAlign="start center"
+             fxLayoutGap="15px"
+             routerLink="/settings/user"
+        >
+            <span class="material-icons">person</span>
+            <span translate>SETTINGS.ACCOUNT</span>
+        </div>
+        <div (click)="changeTitle('Privacy Settings')" class="py-4 px-3 item" fxLayout="row" fxLayoutAlign="start center"
+             fxLayoutGap="15px"
+             routerLink="/settings/privacy"
+        >
+            <span class="material-icons">security</span>
+            <span translate>SETTINGS.PRIVACY</span>
+        </div>
+    </div>
+
+    <div *ngIf="showOutlet" class="col-12 p-0 form-content" fxHide.gt-sm (swiperight)="changeOutlet()">
+        <div class="w-100 pl-4" fxLayoutAlign="start center" style="height: 74px; border-bottom: 1px solid #d1d1d1;">
+            <span class="material-icons" (click)="changeOutlet()">arrow_left</span>
+            <h1 class="m-0">{{title}}</h1>
+        </div>
+        <div class="p-4 w-100 h-75">
+            <div class="w-100 h-100">
+                <ng-container *ngIf="!settingsOutlet.isActivated">
+                    <div class="settings-content w-100">
+                        <h4>Account</h4>
+                    </div>
+                </ng-container>
+                <router-outlet #settingsOutlet="outlet"></router-outlet>
+            </div>
+        </div>
+    </div>
+    <!--    -->
+    <!--  END SMALLER THAN MD  -->
+    <!--    -->
+</div>

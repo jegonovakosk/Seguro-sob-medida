@@ -1,0 +1,123 @@
+<!-- CONTAINER -->
+<div (swipeleft)="onSwipeLeft()"
+     [ngClass.gt-md]="{'padding-lg': true}"
+     [ngClass.md]="{'padding-md': true}"
+     [ngClass.sm]="{'padding-sm': true}"
+     [ngClass.xs]="{'padding-xs': true}"
+     class="in2m-profile"
+>
+    <div class="shadow-sm w-100 profile-card">
+
+        <div class="cover"></div>
+        <div [ngClass.gt-sm]="{'user-lg': true}"
+             [ngClass.lt-md]="{'user-sm': true}"
+             [style.background]="'url(' + this.user.profileImage + ')'"
+             class="user">
+        </div>
+
+        <div [ngClass.gt-sm]="{'desc-lg': true}"
+             [ngClass.lt-md]="{'desc-sm': true}"
+             class="description">
+            <div class="name"
+                 fxLayout.gt-sm="row"
+                 fxLayout.lt-md="column"
+            >
+                <span *ngIf="!editMode else inputName">{{user.name}}</span>
+                <ng-template #inputName>
+                    <input #inputUser [(ngModel)]="user.name"
+                           style="border: none; outline: none; font-size: 20px; font-weight: bold" type="text">
+                </ng-template>
+            </div>
+            <div class="about">
+                <span *ngIf="!editMode else aboutInput">
+                {{user.profileDescription}}
+                </span>
+                <ng-template #aboutInput>
+                    <textarea [(ngModel)]="user.profileDescription" class="w-100" type="text"></textarea>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+
+    <div fxLayout.gt-md="row"
+         fxLayout.lt-lg="column"
+         fxLayoutAlign.gt-md="none none"
+         fxLayoutAlign.lt-lg="center center"
+    >
+        <!--  LEFT CONTENT  -->
+        <div class="col-3" fxHide.lt-lg fxLayout="column" fxLayoutAlign="start end" style="padding: 25px 0;">
+            <app-side-menu class="w-75">
+
+            </app-side-menu>
+        </div>
+        <!--  END LEFT CONTENT  -->
+
+
+        <!--  CENTER CONTENT    -->
+        <div [ngClass.gt-md]="{'col-6': true}"
+             [ngClass.sm]="{'col-10': true}"
+             [ngClass.xs]="{'col-10': true}"
+             fxLayoutAlign="center center"
+             fxLayout="column"
+        >
+            <div [ngClass.gt-md]="{'col-6': true}"
+                 [ngClass.sm]="{'col-10': true}"
+                 [ngClass.xs]="{'col-10': true}"
+                 class="mt-4"
+                 fxLayoutAlign="center center">
+                <!--  OUTLET CONTENT    -->
+                <div [ngStyle.xs]="'min-width: calc(100vw - 30px)'" style="width:  510px;">
+
+                    <router-outlet #outlet='outlet'></router-outlet>
+                </div>
+            </div>
+            <!--  END OUTLET CONTENT    -->
+
+            <!--      HOME PROFILE      -->
+            <div [ngClass.gt-md]="{'col-6': true}"
+                 [ngClass.sm]="{'col-10': true}"
+                 [ngClass.xs]="{'col-10': true}"
+                 class="mt-4"
+                 fxLayoutAlign="center center" *ngIf="!outlet?.isActivated">
+
+                <div [ngStyle.xs]="'min-width: calc(100vw - 30px)'" fxLayout="column"
+                     fxLayoutAlign.gt-md="start center" fxLayoutAlign.lt-lg="center center" style="width:  510px;">
+
+                    <ng-container *ngIf="!loading else loader">
+
+                        <ng-container *ngFor="let post of posts">
+                            <app-card-post [post]="post"
+                                           class="w-100">
+                            </app-card-post>
+                            <app-skeleton-post-card class="w-100"></app-skeleton-post-card>
+                        </ng-container>
+
+                    </ng-container>
+                    <ng-template #loader>
+                        <app-skeleton-post-card class="w-100"></app-skeleton-post-card>
+                        <app-skeleton-post-card class="w-100"></app-skeleton-post-card>
+                        <app-skeleton-post-card class="w-100"></app-skeleton-post-card>
+                    </ng-template>
+
+                </div>
+            </div>
+        </div>
+        <!--  END CENTER CONTENT  -->
+        <!--    RIGHT CONTENT -->
+        <div class="col-3" fxHide.lt-lg fxLayout="column" fxLayoutAlign="start start" style="padding: 25px 0">
+            <div class="h-25 w-75 shadow-sm mb-4"
+                 style="border: 1px solid #d1d1d1; border-radius: 15px; background-color: white">
+
+            </div>
+            <div class="h-25 w-75 shadow-sm mb-4"
+                 style="border: 1px solid #d1d1d1; border-radius: 15px; background-color: white">
+
+            </div>
+        </div>
+        <!--  END RIGHT CONTENT -->
+
+    </div>
+    <!--  END CONTAINER -->
+
+</div>
+

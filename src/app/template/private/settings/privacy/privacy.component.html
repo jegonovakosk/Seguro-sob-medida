@@ -1,0 +1,107 @@
+<div class="user-content">
+  <section>
+    <h2>Stealth</h2>
+    <div ngClass.gt-sm="col-4"
+         ngClass.xs="col-4">
+      <mat-checkbox [formControl]="form.viewers" [labelPosition]="checkboxLabelPosition"><b>Viewers</b> (Hide your views
+        of other profiles)
+      </mat-checkbox>
+    </div>
+
+    <div ngClass.gt-sm="col-4"
+         ngClass.xs="col-4">
+      <mat-checkbox [formControl]="form.faceId" [labelPosition]="checkboxLabelPosition"><b>Face ID</b> (Required Face ID
+        to launch)
+      </mat-checkbox>
+    </div>
+
+    <div ngClass.gt-sm="col-4"
+         ngClass.xs="col-4">
+      <mat-checkbox [formControl]="form.global" [labelPosition]="checkboxLabelPosition"><b>Global</b> (Hide your profile
+        from the Global section)
+      </mat-checkbox>
+    </div>
+
+    <div ngClass.gt-sm="col-4"
+         ngClass.xs="col-4">
+      <mat-checkbox [formControl]="form.region" [labelPosition]="checkboxLabelPosition"><b>Region</b> (Hide your profile
+        from the Region section)
+      </mat-checkbox>
+    </div>
+  </section>
+
+  <section>
+    <h2>Notifications & Alerts</h2>
+    <div ngClass.gt-sm="col-4"
+         ngClass.xs="col-4">
+      <mat-checkbox [formControl]="form.ads" [labelPosition]="checkboxLabelPosition"><b>Ads</b> (Hide ads, promotions & announcements)
+      </mat-checkbox>
+    </div>
+
+    <div ngClass.gt-sm="col-4"
+         ngClass.xs="col-4">
+      <mat-checkbox [formControl]="form.overnight" [labelPosition]="checkboxLabelPosition"><b>Overnight</b> (Hide notifications)
+      </mat-checkbox>
+    </div>
+
+    <div ngClass.gt-sm="col-4"
+         ngClass.xs="col-4">
+      <mat-checkbox [formControl]="form.preview" [labelPosition]="checkboxLabelPosition"><b>Preview</b> (Hide message text in notifications)
+      </mat-checkbox>
+    </div>
+
+    <div ngClass.gt-sm="col-4"
+         ngClass.xs="col-4">
+      <mat-checkbox [formControl]="form.images" [labelPosition]="checkboxLabelPosition"><b>Images</b> (Hide images in notifications)
+      </mat-checkbox>
+    </div>
+  </section>
+
+  <section>
+    <h2>Limit Details</h2>
+    <div ngClass.gt-sm="col-4"
+         ngClass.xs="col-4">
+      <mat-checkbox [formControl]="form.age" [labelPosition]="checkboxLabelPosition"><b>Age</b> (Hide age from your profile)
+      </mat-checkbox>
+    </div>
+
+    <div ngClass.gt-sm="col-4"
+         ngClass.xs="col-4">
+      <mat-checkbox [formControl]="form.distance" [labelPosition]="checkboxLabelPosition"><b>Location/Distance</b> (Hide your distance from other members)
+      </mat-checkbox>
+    </div>
+  </section>
+
+  <section>
+    <h2>Discover</h2>
+    <div ngClass.gt-sm="col-4"
+         ngClass.xs="col-4">
+    <mat-checkbox [formControl]="form.distance" [labelPosition]="checkboxLabelPosition"><b>Most Likes’d</b> (Do not include Most Likes’d stacks)
+    </mat-checkbox>
+    </div>
+
+    <div ngClass.gt-sm="col-4"
+         ngClass.xs="col-4">
+    <mat-checkbox [formControl]="form.distance" [labelPosition]="checkboxLabelPosition"><b>Customized</b> (Disable customized recommendations in Discover & Match)
+    </mat-checkbox>
+    </div>
+
+    <div ngClass.gt-sm="col-6" ngClass.xs="col-6">
+      <label id="discover"><b>Discover Feed (Show first in Discover feed)</b></label>
+      <mat-radio-group aria-labelledby="discover" class="example-radio-group" name="discover"
+                       [labelPosition]="checkboxLabelPosition" [formControl]="form.discoverFeed">
+        <mat-radio-button class="example-margin" value="global">Global</mat-radio-button>
+        <mat-radio-button class="example-margin" value="regional">Regional</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </section>
+
+  <section>
+    <h2>Limit Insights</h2>
+  </section>
+
+  <section>
+    <h2>Travel</h2>
+  </section>
+
+</div>

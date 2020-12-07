@@ -1,0 +1,32 @@
+<div class="user-content">
+    <div ngClass.gt-sm="col-6"
+         ngClass.xs="col-12"
+    >
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="John Smith" [formControl]="form.name" required>
+            <mat-error *ngIf="form.name.invalid">{{'Invalid Name'}}</mat-error>
+        </mat-form-field>
+
+    </div>
+    <div ngClass.gt-sm="col-6"
+         ngClass.xs="col-12"
+    >
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput [formControl]="form.lastName" required>
+            <mat-error *ngIf="form.lastName.invalid">{{'Last Name invalid'}}</mat-error>
+        </mat-form-field>
+
+    </div>
+    <div ngClass.gt-sm="col-6"
+         ngClass.xs="col-12"
+    >
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="form.email" required>
+            <mat-error *ngIf="form.email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+    </div>
+</div>

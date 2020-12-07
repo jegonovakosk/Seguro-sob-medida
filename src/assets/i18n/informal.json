@@ -1,0 +1,40 @@
+{
+  "APP": {
+    "NAME": "LeilãoSeguros"
+  },
+  "HOME": {
+    "TITLE": "Salve! Seja Bem Vindo",
+    "MINS-AGO": "Há {{time}} minutos",
+    "HOURS-AGO": "Há {{time}} horas"
+  },
+  "LOGIN": {
+    "USER": "Usuário",
+    "PASSWORD": "Senha",
+    "LOGIN_BTN": "Entrar",
+    "LOGIN_FACEBOOK": "Entrar com Facebook",
+    "LOGIN_GOOGLE": "Entrar com Google",
+    "INVALID": "Eh lasqueira, as informações estão inválidas"
+  },
+  "PROFILE": {
+    "EDIT": "Editar"
+  },
+  "SETTINGS": {
+    "ACCOUNT": "Conta",
+    "PRIVACY": "Privacidade"
+  },
+  "TEMPLATE": {
+    "NAV": {
+      "SELECT-THEME": "Selecione o Tema",
+      "SELECT-LG": "Selecione o idioma",
+      "LOGOUT": "Sair",
+      "MENU": {
+        "CONFIG": "Configurações",
+        "HOME": "Início",
+        "LIGHT-MODE": "Modo Claro",
+        "LOGOUT": "Sair",
+        "MESSAGES": "Mensagens"
+      }
+    },
+    "TITLE": "Tema"
+  }
+}

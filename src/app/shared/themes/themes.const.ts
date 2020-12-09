@@ -1,4 +1,4 @@
-import {Theme} from '../models/theme.interface';
+import { Theme } from '../models/theme.interface';
 
 export const themes = {
   primary: {

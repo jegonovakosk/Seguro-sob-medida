@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit {
   };
   notLogged = false;
 
+  formMode = "login";
+
 
   ngOnInit(): void {
   }
@@ -29,5 +31,7 @@ export class LoginComponent implements OnInit {
     };
     this.notLogged = !this.authService.doLogin(user);
   }
+
+
 
 }

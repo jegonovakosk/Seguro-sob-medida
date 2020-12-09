@@ -20,6 +20,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import { NewUserComponent } from './new-user/new-user.component';
 
 @NgModule({
     declarations: [
@@ -29,6 +30,7 @@ import { MatRadioModule } from '@angular/material/radio';
         SettingsComponent,
         UserComponent,
         PrivacyComponent,
+        NewUserComponent,
     ],
     imports: [
         CommonModule,

@@ -1,31 +1,29 @@
-<div class="app-container"
-     fxLayout="column"
-     fxLayoutAlign="center center">
+<div class="app-container" fxLayout="column" fxLayoutAlign="center center">
 
-    <div class="mat-card mat-elevation-z10 mb-5"
-         fxLayout="column"
-         ngClass.gt-xs="login-content"
-         ngClass.lt-sm="login-content-sm">
+    <div class="mat-card mat-elevation-z10 mb-5" fxLayout="column" ngClass.gt-xs="login-content"
+        ngClass.lt-sm="login-content-sm">
 
         <div class="login-title mat-elevation-z10" fxLayoutAlign="center center">
             <h1 class="m-0" translate> APP.NAME </h1>
         </div>
-        <div fxLayout="column"
-             fxLayoutAlign="start center"
-             fxLayoutGap="10px">
-            <mat-form-field appearance="outline">
-                <mat-label translate>LOGIN.USER</mat-label>
-                <input [formControl]="form.user" autocomplete="off" matInput name="user" type="text">
-                <mat-icon matSuffix>account_circle</mat-icon>
-                <mat-error *ngIf="form.user.invalid">{{'invalid user'}}</mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label translate>LOGIN.PASSWORD</mat-label>
-                <input [formControl]="form.password" matInput name="password" type="password">
-                <mat-icon matSuffix>vpn_key</mat-icon>
-                <mat-error *ngIf="form.password.invalid">{{'invalid password'}}</mat-error>
-            </mat-form-field>
-        </div>
+        <ng-container *ngIf="formMode === 'login'">
+
+
+            <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="10px">
+                <mat-form-field appearance="outline">
+                    <mat-label translate>LOGIN.USER</mat-label>
+                    <input [formControl]="form.user" autocomplete="off" matInput name="user" type="text">
+                    <mat-icon matSuffix>account_circle</mat-icon>
+                    <mat-error *ngIf="form.user.invalid">{{'invalid user'}}</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label translate>LOGIN.PASSWORD</mat-label>
+                    <input [formControl]="form.password" matInput name="password" type="password">
+                    <mat-icon matSuffix>vpn_key</mat-icon>
+                    <mat-error *ngIf="form.password.invalid">{{'invalid password'}}</mat-error>
+                </mat-form-field>
+            </div>
+        </ng-container>
         <div class="mb-2" fxLayoutAlign="center center">
             <mat-error *ngIf="notLogged" translate>LOGIN.INVALID</mat-error>
         </div>
@@ -37,19 +35,30 @@
             </button>
 
             <!-- LOGIN FACEBOOK -->
-            <button (click)="submitLogin()" class="mat-button uhp-mt-8 w-100" fxLayoutAlign="start center">
+            <!-- <button (click)="submitLogin()" class="mat-button uhp-mt-8 w-100" fxLayoutAlign="start center">
                 <span fxFlex="100" translate>
                   LOGIN.LOGIN_FACEBOOK
                 </span>
-
-                <!--LOGIN GOOGLE-->
-            </button>
-            <button (click)="submitLogin()" class="mat-button uhp-mt-2 w-100"
-                    fxLayoutAlign="start center">
-                <span fxFlex="100" translate>
-                  LOGIN.LOGIN_GOOGLE
-                </span>
-            </button>
+            </button> -->
+            <!--LOGIN GOOGLE-->
         </div>
+
+    </div>
+    <div class="mat-card mat-elevation-z10 mb-5" fxLayout="column" ngClass.gt-xs="login-content"
+        ngClass.lt-sm="login-content-sm">
+        <h2 style="color: black;">Ainda nao tem acesso cadastre-se aqui</h2>
+        <h2 style="color: black;">Você é:</h2>
+        <button (click)="submitLogin()" class="mat-button uhp-mt-2 w-100" fxLayoutAlign="start center">
+            <span fxFlex="100" translate>
+                LOGIN.LOGIN_CADASTRAR_SEGURADO
+            </span>
+        </button>
+        <br>
+        <button (click)="submitLogin()" class="mat-button uhp-mt-2 w-100" fxLayoutAlign="start center">
+            <span fxFlex="100" translate>
+                LOGIN.LOGIN_CADASTRAR_SEGURADORA
+            </span>
+        </button>
+
     </div>
 </div>

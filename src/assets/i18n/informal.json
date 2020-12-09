@@ -13,7 +13,8 @@
     "LOGIN_BTN": "Entrar",
     "LOGIN_FACEBOOK": "Entrar com Facebook",
     "LOGIN_GOOGLE": "Entrar com Google",
-    "INVALID": "Eh lasqueira, as informações estão inválidas"
+    "INVALID": "Eh lasqueira, as informações estão inválidas",
+    "LOGIN_CADASTRAR": "BORA VAGABUNDO CADASTRAR"
   },
   "PROFILE": {
     "EDIT": "Editar"
@@ -34,6 +35,9 @@
         "LOGOUT": "Sair",
         "MESSAGES": "Mensagens"
       }
+    },
+    "NEW-USER": {
+      "BUTTON-NEXT":"Vamos Embora"
     },
     "TITLE": "Tema"
   }

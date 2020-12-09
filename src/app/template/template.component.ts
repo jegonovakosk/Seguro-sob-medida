@@ -12,24 +12,24 @@ import { AuthService } from '../shared/auth/auth.service';
         slideInAnimation,
         trigger('openCloseMenu', [
             // ...
-            state('open', style({marginLeft: 0})),
-            state('closed', style({marginLeft: -300})),
+            state('open', style({ marginLeft: 0 })),
+            state('closed', style({ marginLeft: -300 })),
             transition('open <=> closed', [
                 animate('300ms')
             ]),
         ]),
         trigger('openCloseMenuUser', [
             // ...
-            state('open', style({opacity: 1})),
-            state('closed', style({opacity: 0})),
+            state('open', style({ opacity: 1 })),
+            state('closed', style({ opacity: 0 })),
             transition('open <=> closed', [
                 animate('1ms')
             ]),
         ]),
         trigger('focus', [
             // ...
-            state('on', style({opacity: 0.2, display: 'block'})),
-            state('off', style({opacity: 0, display: 'none'})),
+            state('on', style({ opacity: 0.2, display: 'block' })),
+            state('off', style({ opacity: 0, display: 'none' })),
             transition('open <=> closed', [
                 animate('1ms')
             ]),
@@ -47,19 +47,21 @@ export class TemplateComponent implements OnInit {
         name: 'English',
         value: 'en'
     },
-        {
-            name: 'Português Brasil',
-            value: 'pt-br'
-        }];
+    {
+        name: 'Português Brasil',
+        value: 'pt-br'
+    }];
     navItems = [
-        {route: '/', icon: 'home'},
+        { route: '/', icon: 'home' },
+        { route: '/settings', icon: 'settings' },
+        { route: '/', icon: 'home' }
     ];
 
     constructor(private translate: TranslateService,
-                public authService: AuthService,
-                private router: Router,
-                private themeService: ThemeService) {
-        this.translate.setDefaultLang('informal');
+        public authService: AuthService,
+        private router: Router,
+        private themeService: ThemeService) {
+        this.translate.setDefaultLang('formal');
     }
 
     // fecha menu se tiver clicado fora dele

@@ -5,13 +5,13 @@ import { LoginStorage } from '../models/loginStorage.interface';
 import { Router } from '@angular/router';
 import { NgxPermissionsService } from 'ngx-permissions';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class AuthService {
     permissions = ['AUTH'];
 
     constructor(private httpClient: HttpClient,
-                private router: Router,
-                private permissionsService: NgxPermissionsService) {
+        private router: Router,
+        private permissionsService: NgxPermissionsService) {
     }
 
     doLogin(user): boolean {
@@ -22,7 +22,7 @@ export class AuthService {
                 isLogged: true
             };
             window.sessionStorage.setItem(LocalStorage.LOGIN_STORAGE, JSON.stringify(loginStorage));
-            this.router.navigate(['/']);
+            this.router.navigate(['/new-user']);
             this.permissionsService.loadPermissions(this.permissions);
             return true;
         }

@@ -20,7 +20,9 @@
     "PASSWORD": "Senha",
     "LOGIN_BTN": "Entrar",
     "LOGIN_FACEBOOK": "Entrar com Facebook",
-    "LOGIN_GOOGLE": "Entrar com Google"
+    "LOGIN_GOOGLE": "Entrar com Google",
+    "LOGIN_CADASTRAR_SEGURADO":"Segurado",
+    "LOGIN_CADASTRAR_SEGURADORA":"Seguradora"
   },
   "PROFILE": {
     "EDIT": "Editar"
@@ -41,6 +43,9 @@
         "LOGOUT": "Sair",
         "MESSAGES": "Mensagens"
       }
+    },
+    "NEW-USER": {
+      "BUTTON-NEXT":"Próximo"
     },
     "TITLE": "Tema"
   }

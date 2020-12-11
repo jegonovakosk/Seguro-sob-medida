@@ -3,23 +3,32 @@ import { Theme } from '../models/theme.interface';
 export const themes = {
   primary: {
     '--text-color': '#212121',
-    '--body-background': '#DCEDC8',
+    //cor de fundo do site 
+    '--body-background': '#ffffff', 
     '--body-color': 'black',
-    '--icon-color': '#212121',
+    //icone do login
+    '--icon-color': '#003366',
+    //icone da tela inicial
     '--icon-hover': '#d1d1d1',
     '--primary': '#212121',
-    '--primary-color': '#8BC34A',
+    //botões iniciais
+    '--primary-color': '#377dff',
+    //fundo da tela de icones iniciais
     '--primary-background': '#DCEDC8',
     '--secondary': '#757575',
-    '--secondary-color': '#689F38',
+    //cor da logomarca
+    '--secondary-color': '#66b3ff',
     '--warning-color': 'string',
     '--success-color': 'string',
     '--accent': 'black',
     '--white': '#FFFFFF',
     '--nav-height': '70px',
     '--footer-height': '50px',
-    '--footer-background': '#689F38',
-    '--nav-color': '#8BC34A',
+    //rodapé
+    '--footer-background': '#f2f2f2',
+    //cor do footer
+    '--nav-color': '#f2f2f2',
+    '--text-color-button': '#fff'
   } as Theme,
   secondary: {
     '--text-color': '#d1d1d1',

@@ -1,1 +1,46 @@
-<p>cadastro-segurado works!</p>
+<div class="app-container" fxLayout="column" fxLayoutAlign="center center">
+    <div class="mat-card mat-elevation-z10 mb-5" fxLayout="column" ngClass.gt-xs="cadastro-content" ngClass.lt-sm="cadastro-content-sm">
+
+        <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Nome">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Sobrenome</mat-label>
+            <input matInput placeholder="Sobrenome">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>CPF</mat-label>
+            <input matInput placeholder="CPF">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>RG</mat-label>
+            <input matInput placeholder="RG">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Endereço</mat-label>
+            <input matInput placeholder="Endereço">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="E-mail">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'">
+                <mat-icon matSuffix (click)="hide = !hide" >{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'">
+                <mat-icon matSuffix (click)="hide = !hide" >{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </mat-form-field>
+    </div>
+</div>

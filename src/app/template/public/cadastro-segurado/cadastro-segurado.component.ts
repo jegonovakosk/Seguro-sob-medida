@@ -5,11 +5,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './cadastro-segurado.component.html',
   styleUrls: ['./cadastro-segurado.component.scss']
 })
-export class CadastroSeguradoComponent implements OnInit {
 
+
+export class CadastroSeguradoComponent implements OnInit {
+  hide = true;
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  
 
 }

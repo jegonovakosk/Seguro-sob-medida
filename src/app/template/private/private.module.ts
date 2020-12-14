@@ -20,36 +20,38 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-    declarations: [
-        HomeComponent,
-        NotificationsComponent,
-        ProfileComponent,
-        SettingsComponent,
-        UserComponent,
-        PrivacyComponent,
-    ],
-    imports: [
-        CommonModule,
-        PickerModule,
-        PrivateRoutingModule,
-        I18nModule,
-        FlexLayoutModule,
-        NgxSkeletonLoaderModule,
-        StopPropagationModule,
-        ComponentsModule,
-        NgxPermissionsModule.forChild(),
-        MatFormFieldModule,
-        MatInputModule,
-        MatSelectModule,
-        ReactiveFormsModule,
-        FormsModule,
-        MatCheckboxModule,
-        MatRadioModule
-    ],
-    exports: [],
-    providers: [],
+  declarations: [
+    HomeComponent,
+    NotificationsComponent,
+    ProfileComponent,
+    SettingsComponent,
+    UserComponent,
+    PrivacyComponent,
+  ],
+  imports: [
+    CommonModule,
+    PickerModule,
+    PrivateRoutingModule,
+    I18nModule,
+    FlexLayoutModule,
+    NgxSkeletonLoaderModule,
+    StopPropagationModule,
+    ComponentsModule,
+    NgxPermissionsModule.forChild(),
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatDialogModule
+  ],
+  exports: [],
+  providers: [],
 })
 export class PrivateModule {
 }

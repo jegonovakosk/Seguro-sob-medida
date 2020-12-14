@@ -3,22 +3,28 @@ import { HttpClient } from '@angular/common/http';
 import { Post } from '../../../shared/models/post.interface';
 import { Observable } from 'rxjs';
 import { User } from '../../../shared/models/user.interface';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class HomeService {
 
-    constructor(private readonly http: HttpClient) {
-    }
+  baseUrl = environment.baseUrl;
 
-    getUser(): Observable<User> {
-        return this.http.get<User>('assets/mocks/user.json');
-    }
+  constructor(private readonly httpClient: HttpClient) {
+  }
 
-    getPosts(): Observable<Post[]> {
-        return this.http.get<Post[]>('assets/mocks/posts.json');
-    }
+  getUser(): Observable<User> {
+    return this.httpClient.get<User>('assets/mocks/user.json');
+  }
 
+  getPosts(): Observable<Post[]> {
+    return this.httpClient.get<Post[]>('assets/mocks/posts.json');
+  }
+
+  getQuestions(): Observable<any> {
+    return this.httpClient.get(`${this.baseUrl}questionario/1`);
+  }
 
 }

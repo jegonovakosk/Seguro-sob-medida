@@ -7,14 +7,14 @@ import { NgxPermissionsService } from 'ngx-permissions';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class AuthService {
   baseUrl = environment.baseUrl;
   permissions = ['AUTH'];
 
   constructor(private httpClient: HttpClient,
-              private router: Router,
-              private permissionsService: NgxPermissionsService) {
+    private router: Router,
+    private permissionsService: NgxPermissionsService) {
   }
 
 

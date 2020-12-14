@@ -1,4 +1,4 @@
-<div class="app-container" fxLayout="column" fxLayoutAlign="center center">
+<!-- <div class="app-container" fxLayout="column" fxLayoutAlign="center center">
     <div class="mat-card mat-elevation-z10 mb-5" fxLayout="column" ngClass.gt-xs="cadastro-content" ngClass.lt-sm="cadastro-content-sm">
 
         <mat-form-field appearance="outline">
@@ -42,5 +42,117 @@
             <input matInput [type]="hide ? 'password' : 'text'">
                 <mat-icon matSuffix (click)="hide = !hide" >{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </mat-form-field>
+    </div>
+</div> -->
+
+<!--  Formulario de Segurado  -->
+
+<div class="app-container" fxLayout="column" fxLayoutAlign="center center">
+
+    <div class="mat-card mat-elevation-z10 mb-5" fxLayout="column" ngClass.gt-xs="cadastro-content"
+        ngClass.lt-sm="cadastro-content-sm">
+
+        <div class="cadastro-title mat-elevation-z10" fxLayoutAlign="center center">
+            <h1 class="m-0" translate> Cadastro</h1>
+        </div>
+
+        <div class="d-flex flex-column align-items-center" style="gap: 10px;">
+            <!-- Cadastro Segurado -->
+            <button (click)="showSegurado()" class="mat-button uhp-mt-4 w-100" [value]=1>
+                <span translate>Segurado</span>
+            </button>
+
+            <!-- cadastro seguradora -->
+            <button (click)="showSeguradora()" class="mat-button uhp-mt-8 w-100" fxLayoutAlign="start center" value="2">
+                <span fxFlex="100" translate>
+                    Seguradora
+                </span>
+            </button>
+
+        </div>
+        <br>
+
+        <ng-container *ngIf="'cadastro'">
+
+            <div *ngIf="hide" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="10px">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nome</mat-label>
+                    <input matInput placeholder="Nome">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Sobrenome</mat-label>
+                    <input matInput placeholder="Sobrenome">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>CPF</mat-label>
+                    <input matInput placeholder="CPF">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>RG</mat-label>
+                    <input matInput placeholder="RG">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Endereço</mat-label>
+                    <input matInput placeholder="Endereço">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput placeholder="E-mail">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <!-- Formulario de seguradora  -->
+
+            <div *ngIf="seg" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="10px">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nome</mat-label>
+                    <input matInput placeholder="Nome">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Nome da Seguradora</mat-label>
+                    <input matInput placeholder="Sobrenome">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>CNPJ</mat-label>
+                    <input matInput placeholder="CPF">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput placeholder="E-mail">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+            </div>
+        </ng-container>
     </div>
 </div>

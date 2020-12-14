@@ -20,6 +20,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatDialogModule } from '@angular/material/dialog';
 import { NewUserComponent } from './new-user/new-user.component';
 
 @NgModule({
@@ -48,7 +49,8 @@ import { NewUserComponent } from './new-user/new-user.component';
         ReactiveFormsModule,
         FormsModule,
         MatCheckboxModule,
-        MatRadioModule
+        MatRadioModule,
+        MatDialogModule
     ],
     exports: [],
     providers: [],

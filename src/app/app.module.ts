@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthService } from './shared/auth/auth.service';
 // import ngx-translate and the http loader
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +18,7 @@ import { ComponentsModule } from './shared/components/components.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NgxPermissionsModule } from 'ngx-permissions';
+import { TokenInterceptor } from './services/http.interceptor';
 
 
 export class HammerConfig extends HammerGestureConfig {
@@ -60,7 +61,12 @@ export class HammerConfig extends HammerGestureConfig {
         {
             provide: RouteReuseStrategy,
             useClass: RouteReuseService
-        }
+        },
+      {
+        provide: HTTP_INTERCEPTORS,
+        useClass: TokenInterceptor,
+        multi: true
+      }
     ],
     bootstrap: [AppComponent]
 })

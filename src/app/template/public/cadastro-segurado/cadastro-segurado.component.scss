@@ -1,29 +1,97 @@
+.cadastro-container {
+  gap: 30px;
+}
 
-  .cadastro-content-sm {
-    padding: 20px 15px 50px;
+.cadastro-content-sm {
+  padding: 20px 15px 50px;
+  border-radius: 5px;
+  background-color: var(--body-background);
+
+  .cadastro-title {
+    margin: 20px 0 30px;
+    padding: 10px 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     border-radius: 5px;
-    background-color: var(--body-background);
   }
 
-    .cadastro-content {
-        padding: 20px 50px 70px;
-        border-radius: 5px;
-        width: 1000px; 
+  h1 {
+    color: white;
+  }
+
+  div {
+    width: 250px;
+
+    mat-form-field {
+      margin-top: -10px;
+      width: 100%;
     }
-  
-    .example-container .mat-form-field + .mat-form-field {
-        margin-left: 8px;
-      }
-      
-      .example-right-align {
-        text-align: right;
-      }
-      
-      input.example-right-align::-webkit-outer-spin-button,
-      input.example-right-align::-webkit-inner-spin-button {
-        display: none;
-      }
-      
-      input.example-right-align {
-        -moz-appearance: textfield;
-      }
+  }
+
+  button {
+    width: 250px !important;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    border-radius: 5px;
+  }
+}
+
+.cadastro-content {
+  padding: 20px 50px 70px;
+  border-radius: 5px;
+
+  .cadastro-title {
+    margin: 50px 0 50px;
+    padding: 10px 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-radius: 5px;
+  }
+
+  h1 {
+    color: white;
+  }
+
+  div {
+    width: 350px;
+
+    mat-form-field {
+      margin-top: -10px;
+      width: 100%;
+    }
+  }
+
+  //button:nth-child(3) {
+  //  //background-color: var(--primary);
+  //  color: white;
+  //}
+
+  button {
+    cursor: pointer;
+    padding: 5px;
+    width: 20%;
+    color: var(--text-color-button);
+    background-color: var(--primary-color);
+    border-radius: 5px;
+  }
+}
+
+
+.example-container .mat-form-field+.mat-form-field {
+  margin-left: 8px;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}

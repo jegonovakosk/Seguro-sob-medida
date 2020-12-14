@@ -30,7 +30,14 @@ export class LoginComponent implements OnInit {
       user: this.form.user.value,
       password: this.form.password.value
     };
-    this.notLogged = !this.authService.doLogin(user);
+    this.authService.doLogin(user)
+      .subscribe(resp => {
+        this.notLogged = false;
+        this.authService.authenticateUser(resp);
+      }, error => {
+        console.log(error);
+        this.notLogged = true;
+      });
   }
 
   submitCadastro(): void{

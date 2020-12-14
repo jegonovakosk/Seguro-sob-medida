@@ -1,0 +1,92 @@
+<div fxLayout="column"
+     fxLayoutAlign="center unset"
+     mat-dialog-title
+     style="position: relative">
+
+  <div (click)="onClickCloseModal()"
+       class="close"
+       fxLayoutAlign="unset end">
+    <mat-icon>close</mat-icon>
+  </div>
+</div>
+
+
+<mat-dialog-content [ngClass.lt-md]="{'mat-size-md': true, 'mat-size-lt': false }"
+                    [ngClass.lt-sm]="{'mat-size-sm': true, 'mat-size-md': false }"
+                    class="mat-size-lt mat-typography"
+                    fxLayout="column"
+                    fxLayoutAlign="center center"
+                    fxLayoutGap="15px">
+  <!-- PERGUNTA -->
+  <ng-container *ngIf="questions.length !== position">
+    <div fxLayoutAlign="center none">
+      <p>{{ questions[position]?.pergunta }}</p>
+    </div>
+
+    <!-- TEXTO -->
+    <!--    <ng-container *ngIf="questions[position]?.type === 'TEXT'">-->
+    <ng-container>
+
+      <div *ngIf="questions[position]">
+        <mat-form-field>
+          <input [(ngModel)]="questions[position].resposta"
+                 autocomplete="off"
+                 matInput
+                 name="resposta">
+        </mat-form-field>
+
+      </div>
+
+    </ng-container>
+  </ng-container>
+  <!-- CHECKBOX -->
+  <!--    <ng-container *ngIf="questions[position]?.type === 'COMBO'">-->
+
+  <!--      <div *ngIf="questions[position]"-->
+  <!--           fxLayout="column">-->
+  <!--        <ng-container *ngFor="let opcao of questions[position].opcoes">-->
+  <!--          <section>-->
+  <!--            <mat-checkbox (ngModelChange)="onChangeCheckBox($event)"-->
+  <!--                          [(ngModel)]="opcao.value"> {{ opcao.description }} </mat-checkbox>-->
+  <!--          </section>-->
+
+  <!--        </ng-container>-->
+  <!--      </div>-->
+  <!--    </ng-container>-->
+  <!--  </ng-container>-->
+
+  <!-- FIM -->
+  <ng-container *ngIf="questions.length === position">
+
+    <h2>Pesquisa Realizada!</h2>
+
+    <button style="width: 200px; height: 50px; background-color: blue; color: white; border-radius: 5px">
+      Compartilhar
+    </button>
+  </ng-container>
+</mat-dialog-content>
+<!-- BOTÕES -->
+
+<ng-container *ngIf="questions.length !== position">
+  <mat-dialog-actions fxLayoutAlign="space-between center ">
+    <button (click)="onClickBack()"
+            [disabled]="false"
+            [ngClass]="{'cancel-btn': position === 0, 'back-btn': position !== 0}"
+            class="seg-btn-lt"
+            mat-button
+            ngClass.lt-md="seg-btn-md"
+            ngClass.lt-sm="seg-btn-sm">
+      {{ position === 0 ? 'Cancelar' : 'Voltar'}}
+    </button>
+    <button (click)="onClickNext()"
+            [disabled]="!questions[position]?.resposta"
+            [ngClass]="{'next-btn': position !== questions.length - 1, 'finish-btn': position === questions.length - 1 }"
+            class="seg-btn-lt"
+            mat-button
+            ngClass.lt-md="seg-btn-md"
+            ngClass.lt-sm="seg-btn-sm">
+      {{ position === questions.length - 1 ? 'Concluir' : 'Próxima'}}
+    </button>
+  </mat-dialog-actions>
+</ng-container>
+

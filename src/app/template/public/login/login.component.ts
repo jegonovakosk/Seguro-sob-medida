@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth/auth.service';
 import { FormControl, Validators } from '@angular/forms';
@@ -9,7 +10,7 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
 
   form = {
@@ -29,7 +30,19 @@ export class LoginComponent implements OnInit {
       user: this.form.user.value,
       password: this.form.password.value
     };
-    this.notLogged = !this.authService.doLogin(user);
+    this.authService.doLogin(user)
+      .subscribe(resp => {
+        this.notLogged = false;
+        this.authService.authenticateUser(resp);
+      }, error => {
+        console.log(error);
+        this.notLogged = true;
+      });
+  }
+
+  submitCadastro(): void{
+    this.router.navigate(['/cadastro-segurado']);
+
   }
 
 

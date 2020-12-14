@@ -6,9 +6,11 @@ import { FaqComponent } from './faq/faq.component';
 import { SupportComponent } from './support/support.component';
 import { UserPolicyComponent } from './user-policy/user-policy.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { CadastroSeguradoComponent } from './cadastro-segurado/cadastro-segurado.component';
 
 const routes: Routes = [
     {path: 'login', component: LoginComponent},
+    {path: 'cadastro-segurado', component: CadastroSeguradoComponent},
     {path: 'terms', component: TermsComponent},
     {path: 'faq', component: FaqComponent},
     {path: 'support', component: SupportComponent},

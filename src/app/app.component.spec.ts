@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  // it(`should have as title 'fans-social-media'`, () => {
+  // it(`should have as title 'seguro-sob-medida'`, () => {
   //   const fixture = TestBed.createComponent(AppComponent);
   //   const app = fixture.componentInstance;
-  //   expect(app.title).toEqual('fans-social-media');
+  //   expect(app.title).toEqual('seguro-sob-medida');
   // });
 
   // it('should render title', () => {
   //   const fixture = TestBed.createComponent(AppComponent);
   //   fixture.detectChanges();
   //   const compiled = fixture.nativeElement;
-  //   expect(compiled.querySelector('.content span').textContent).toContain('fans-social-media app is running!');
+  //   expect(compiled.querySelector('.content span').textContent).toContain('seguro-sob-medida app is running!');
   // });
 });

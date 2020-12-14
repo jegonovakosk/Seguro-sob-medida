@@ -12,7 +12,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { PrivacyComponent } from './privacy/privacy.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CadastroSeguradoComponent } from './cadastro-segurado/cadastro-segurado.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
         UserPolicyComponent,
         FaqComponent,
         LoginComponent,
-        PrivacyComponent
+        PrivacyComponent,
+        CadastroSeguradoComponent
     ],
     imports: [
         CommonModule,
@@ -31,7 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
         MatFormFieldModule,
         MatIconModule,
         MatInputModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FormsModule
     ],
     exports: [],
     providers: [],

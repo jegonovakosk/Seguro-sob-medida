@@ -21,37 +21,39 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
+import { NewUserComponent } from './new-user/new-user.component';
 
 @NgModule({
-  declarations: [
-    HomeComponent,
-    NotificationsComponent,
-    ProfileComponent,
-    SettingsComponent,
-    UserComponent,
-    PrivacyComponent,
-  ],
-  imports: [
-    CommonModule,
-    PickerModule,
-    PrivateRoutingModule,
-    I18nModule,
-    FlexLayoutModule,
-    NgxSkeletonLoaderModule,
-    StopPropagationModule,
-    ComponentsModule,
-    NgxPermissionsModule.forChild(),
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    ReactiveFormsModule,
-    FormsModule,
-    MatCheckboxModule,
-    MatRadioModule,
-    MatDialogModule
-  ],
-  exports: [],
-  providers: [],
+    declarations: [
+        HomeComponent,
+        NotificationsComponent,
+        ProfileComponent,
+        SettingsComponent,
+        UserComponent,
+        PrivacyComponent,
+        NewUserComponent,
+    ],
+    imports: [
+        CommonModule,
+        PickerModule,
+        PrivateRoutingModule,
+        I18nModule,
+        FlexLayoutModule,
+        NgxSkeletonLoaderModule,
+        StopPropagationModule,
+        ComponentsModule,
+        NgxPermissionsModule.forChild(),
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatCheckboxModule,
+        MatRadioModule,
+        MatDialogModule
+    ],
+    exports: [],
+    providers: [],
 })
 export class PrivateModule {
 }

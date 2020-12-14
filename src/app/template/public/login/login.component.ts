@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth/auth.service';
 import { FormControl, Validators } from '@angular/forms';
@@ -9,7 +10,7 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
 
   form = {
@@ -17,6 +18,8 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', [Validators.required])
   };
   notLogged = false;
+
+  formMode = "login";
 
 
   ngOnInit(): void {
@@ -36,5 +39,12 @@ export class LoginComponent implements OnInit {
         this.notLogged = true;
       });
   }
+
+  submitCadastro(): void{
+    this.router.navigate(['/cadastro-segurado']);
+
+  }
+
+
 
 }

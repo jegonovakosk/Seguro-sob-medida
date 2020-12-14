@@ -1,58 +1,39 @@
-<div [ngClass.gt-md]="{'padding-lg': true}"
-     [ngClass.md]="{'padding-md': true}"
-     [ngClass.sm]="{'padding-sm': true}"
-     [ngClass.xs]="{'padding-xs': true}"
-     appTheme
-     class="in2me-nav shadow"
->
+<div [ngClass.gt-md]="{'padding-lg': true}" [ngClass.md]="{'padding-md': true}" [ngClass.sm]="{'padding-sm': true}"
+    [ngClass.xs]="{'padding-xs': true}" appTheme class="in2me-nav shadow">
     <h1 routerLink="/" style="cursor: pointer; outline: none" translate>APP.NAME</h1>
+    <h1 routerLink="/cadastro-segurado" style="cursor: pointer; outline: none" translate>Cadastrar</h1>
     <ng-template ngxPermissionsOnly="AUTH">
 
-    <div ngClass.lg="w-40"
-         ngClass.xl="w-30"
-         [ngStyle.md]="{'width': '50%', 'margin-left': '-100px'}"
-         class="search"
-         fxHide.lt-md>
-    </div>
+        <div ngClass.lg="w-40" ngClass.xl="w-30" [ngStyle.md]="{'width': '50%', 'margin-left': '-100px'}" class="search"
+            fxHide.lt-md>
+        </div>
     </ng-template>
-    <div (click)="clickOpenCloseMenu($event)"
-         class="search-xs"
-         fxHide.gt-md>
+    <div (click)="clickOpenCloseMenu($event)" class="search-xs" fxHide.gt-md>
         <span class="material-icons">menu</span>
 
     </div>
     <ng-template ngxPermissionsOnly="AUTH">
-    <div  (click)="clickOpenCloseMenuUser($event)" class="user-options"
-         fxHide.lt-lg>
-        <span>{{ authService.isLogged() ? 'Dwayne Hoffmann' : 'Login' }}</span>
-        <div class="shadow-sm"></div>
-    </div>
+        <div (click)="clickOpenCloseMenuUser($event)" class="user-options" fxHide.lt-lg>
+            <span>{{ authService.isLogged() ? 'Dwayne Hoffmann' : 'Login' }}</span>
+            <div class="shadow-sm"></div>
+        </div>
     </ng-template>
 
 
 </div>
 
 <!-- NAV SIDEBAR -->
-<div [@openCloseMenu]="menuState"
-     class="nav-menu shadow"
-     fxHide.gt-md
-     fxLayout="column"
-     fxLayoutAlign="end none">
+<div [@openCloseMenu]="menuState" class="nav-menu shadow" fxHide.gt-md fxLayout="column" fxLayoutAlign="end none">
     <app-side-menu class="w-100"></app-side-menu>
 </div>
 
 <!-- NAV USER MENU -->
-<div (click)="$event.stopPropagation()"
-     [@openCloseMenuUser]="menuUserState"
-     class="user-menu shadow"
-     fxHide.lt-lg
-     fxLayout="column"
-     fxLayoutAlign="start none">
-    <div (click)="doLogout()"
-    class="p-4" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px"
-         style="cursor: pointer">
+<div (click)="$event.stopPropagation()" [@openCloseMenuUser]="menuUserState" class="user-menu shadow" fxHide.lt-lg
+    fxLayout="column" fxLayoutAlign="start none">
+    <div (click)="doLogout()" class="p-4" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px"
+        style="cursor: pointer">
         <span class="material-icons">logout</span>
-      <span translate>TEMPLATE.NAV.LOGOUT</span>
+        <span translate>TEMPLATE.NAV.LOGOUT</span>
     </div>
 </div>
 
@@ -67,22 +48,16 @@
 
 
 <!-- FOOTER -->
-<div [ngClass.gt-md]="{'padding-lg': true}"
-     [ngClass.md]="{'padding-md': true}"
-     [ngClass.sm]="{'padding-sm': true}"
-     [ngClass.xs]="{'padding-xs': true}"
-     class="seg-footer" fxLayout="row" fxLayoutAlign="center center" style="flex-wrap: wrap">
+<div [ngClass.gt-md]="{'padding-lg': true}" [ngClass.md]="{'padding-md': true}" [ngClass.sm]="{'padding-sm': true}"
+    [ngClass.xs]="{'padding-xs': true}" class="seg-footer" fxLayout="row" fxLayoutAlign="center center"
+    style="flex-wrap: wrap">
 </div>
 
 
 <!-- MOBILE NAV -->
 
-<div class="mobile-nav " fxHide
-     fxLayout="row"
-     fxLayoutAlign="space-around center"
-     fxShow.lt-md
-     [ngClass.sm]="{'padding-sm': true}"
->
+<div class="mobile-nav " fxHide fxLayout="row" fxLayoutAlign="space-around center" fxShow.lt-md
+    [ngClass.sm]="{'padding-sm': true}">
     <ng-container *ngFor="let item of navItems">
         <div style="outline: none;" [routerLink]="[item.route]">
             <span class="material-icons">{{item.icon}}</span>

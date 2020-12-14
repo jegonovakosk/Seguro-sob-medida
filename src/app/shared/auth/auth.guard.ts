@@ -10,8 +10,8 @@ import { NgxPermissionsService } from 'ngx-permissions';
 export class AuthGuard implements CanActivate {
     permissions = ['AUTH'];
     constructor(private authService: AuthService,
-                private router: Router,
-                private permissionsService: NgxPermissionsService) {
+        private router: Router,
+        private permissionsService: NgxPermissionsService) {
     }
 
     canActivate(
@@ -21,9 +21,13 @@ export class AuthGuard implements CanActivate {
         if (this.authService.isLogged()) {
             this.permissionsService.loadPermissions(this.permissions);
             return true;
+        } else {
+            this.router.navigate(['login']);
+
         }
 
-        this.router.navigate(['login']);
     }
+
+
 
 }

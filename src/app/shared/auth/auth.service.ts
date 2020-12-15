@@ -22,6 +22,10 @@ export class AuthService {
     return this.httpClient.post(`${this.baseUrl}login?email=${user.user}&password=${user.password}`, '');
   }
 
+  doRegister(register): Observable<any> {
+    return this.httpClient.post(`${this.baseUrl}register?email=${register.email}&password=${register.password}&cpfCnpj=${register.cnpj}&user_type=${register.type}`, '');
+  }
+
 
   authenticateUser(data): void {
     console.log('DATA', data);

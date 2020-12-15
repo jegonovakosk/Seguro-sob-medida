@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/shared/auth/auth.service';
+
 
 @Component({
   selector: 'app-cadastro-segurado',
@@ -9,36 +11,43 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class CadastroSeguradoComponent implements OnInit {
+
+
+
   hide = true;
-  seg2 = false;
-  seg = false;
   formMode = 'cadastro'
 
-  f = [];
+  form = {
+    email: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
+    cnpj: new FormControl('', [Validators.required]),
+    type: new FormControl('', [Validators.required])
+  };
 
+  registerClient(value): void {
+    const register = {
+      email: this.form.email.value,
+      password: this.form.password.value,
+      cnpj: this.form.cnpj.value,
+      type: this.form.type.value
+    }
+    register.type = "1";
+    this.authService.doRegister(register)
+      .subscribe(resp => {
+        console.log(resp);
+      }, error => {
+        console.log(error);
+      }
+      )
+    console.log(register);
+  }
 
-  constructor(private router: Router) { }
   ngOnInit(): void {
   }
 
   submitCadastro(): void {
     this.router.navigate(['/cadastro-segurado']);
 
-  }
-
-  showSegurado() {
-    if (this.seg === true) {
-      this.seg = false;
-    }
-    this.seg2 = !this.seg2;
-    console.log()
-  }
-
-  showSeguradora() {
-    if (this.seg2 === true) {
-      this.seg2 = false;
-    }
-    this.seg = !this.seg;
   }
 
 }

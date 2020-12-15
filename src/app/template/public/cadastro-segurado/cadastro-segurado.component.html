@@ -57,101 +57,36 @@
         </div>
 
         <div class="d-flex flex-column align-items-center" style="gap: 10px;">
-            <!-- Cadastro Segurado -->
-            <button (click)="showSegurado()" class="mat-button uhp-mt-4 w-100" [value]=1>
-                <span translate>Segurado</span>
-            </button>
-
-            <!-- cadastro seguradora -->
-            <button (click)="showSeguradora()" class="mat-button uhp-mt-8 w-100" fxLayoutAlign="start center" value="2">
-                <span fxFlex="100" translate>
-                    Seguradora
-                </span>
-            </button>
-
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Segurado</mat-radio-button>
+                <mat-radio-button value="2">Seguradora</mat-radio-button>
+            </mat-radio-group>
         </div>
         <br>
 
         <ng-container *ngIf="'cadastro'">
 
-            <div *ngIf="hide" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="10px">
-                <mat-form-field appearance="outline">
-                    <mat-label>Nome</mat-label>
-                    <input matInput placeholder="Nome">
-                </mat-form-field>
+            <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="10px">
 
                 <mat-form-field appearance="outline">
-                    <mat-label>Sobrenome</mat-label>
-                    <input matInput placeholder="Sobrenome">
-                </mat-form-field>
+                    <mat-label>CPF / CNPJ</mat-label>
+                    <input [formControl]="form.cnpj" matInput placeholder="CPF">
 
-                <mat-form-field appearance="outline">
-                    <mat-label>CPF</mat-label>
-                    <input matInput placeholder="CPF">
                 </mat-form-field>
-
                 <mat-form-field appearance="outline">
-                    <mat-label>RG</mat-label>
-                    <input matInput placeholder="RG">
-                </mat-form-field>
-
-                <mat-form-field appearance="outline">
-                    <mat-label>Endereço</mat-label>
-                    <input matInput placeholder="Endereço">
-                </mat-form-field>
-
-                <mat-form-field appearance="outline">
-                    <mat-label>E-mail</mat-label>
-                    <input matInput placeholder="E-mail">
+                    <mat-label>Email</mat-label>
+                    <input [formControl]="form.email" matInput placeholder="Nome">
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Enter your password</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <input [formControl]="form.password" matInput [type]="hide ? 'password' : 'text'">
                     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
 
-                <mat-form-field appearance="outline">
-                    <mat-label>Enter your password</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'">
-                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </mat-form-field>
-            </div>
-
-            <!-- Formulario de seguradora  -->
-
-            <div *ngIf="seg" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="10px">
-                <mat-form-field appearance="outline">
-                    <mat-label>Nome</mat-label>
-                    <input matInput placeholder="Nome">
-                </mat-form-field>
-
-                <mat-form-field appearance="outline">
-                    <mat-label>Nome da Seguradora</mat-label>
-                    <input matInput placeholder="Sobrenome">
-                </mat-form-field>
-
-                <mat-form-field appearance="outline">
-                    <mat-label>CNPJ</mat-label>
-                    <input matInput placeholder="CPF">
-                </mat-form-field>
-
-                <mat-form-field appearance="outline">
-                    <mat-label>E-mail</mat-label>
-                    <input matInput placeholder="E-mail">
-                </mat-form-field>
-
-                <mat-form-field appearance="outline">
-                    <mat-label>Enter your password</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'">
-                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </mat-form-field>
-
-                <mat-form-field appearance="outline">
-                    <mat-label>Enter your password</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'">
-                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </mat-form-field>
+                <button (click)="registerClient()" class="mat-button uhp-mt-4 w-100">
+                    <span translate>Cadastrar</span>
+                </button>
             </div>
         </ng-container>
     </div>

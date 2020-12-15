@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CadastroSeguradoComponent } from './cadastro-segurado/cadastro-segurado.component';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import { CadastroSeguradoComponent } from './cadastro-segurado/cadastro-segurado
         MatIconModule,
         MatInputModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        MatRadioModule
     ],
     exports: [],
     providers: [],

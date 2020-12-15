@@ -95,3 +95,7 @@ input.example-right-align::-webkit-inner-spin-button {
 input.example-right-align {
   -moz-appearance: textfield;
 }
+
+.mat-radio-button~.mat-radio-button {
+  margin-left: 16px;
+}

@@ -12,7 +12,7 @@ export const themes = {
     '--icon-hover': '#d1d1d1',
     '--primary': '#212121',
     //botões iniciais
-    '--primary-color': '#377dff',
+    '--primary-color': '#8594e7',
     //fundo da tela de icones iniciais
     '--primary-background': '#DCEDC8',
     '--secondary': '#757575',
@@ -25,9 +25,9 @@ export const themes = {
     '--nav-height': '70px',
     '--footer-height': '50px',
     //rodapé
-    '--footer-background': '#f2f2f2',
+    '--footer-background': '#f6f6f6',
     //cor do footer
-    '--nav-color': '#f2f2f2',
+    '--nav-color': '#f6f6f6',
     '--text-color-button': '#fff'
   } as Theme,
   secondary: {

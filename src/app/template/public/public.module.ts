@@ -1,3 +1,4 @@
+import { MatButtonModule } from '@angular/material/button';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TermsComponent } from './terms/terms.component';
@@ -15,6 +16,9 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CadastroSeguradoComponent } from './cadastro-segurado/cadastro-segurado.component';
 import { MatRadioModule } from '@angular/material/radio';
+import { TelaInicioComponent } from './tela-inicio/tela-inicio.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
     declarations: [
@@ -24,7 +28,8 @@ import { MatRadioModule } from '@angular/material/radio';
         FaqComponent,
         LoginComponent,
         PrivacyComponent,
-        CadastroSeguradoComponent
+        CadastroSeguradoComponent,
+        TelaInicioComponent
     ],
     imports: [
         CommonModule,
@@ -36,7 +41,9 @@ import { MatRadioModule } from '@angular/material/radio';
         MatInputModule,
         ReactiveFormsModule,
         FormsModule,
-        MatRadioModule
+        MatRadioModule,
+        MatDialogModule,
+        MatButtonModule
     ],
     exports: [],
     providers: [],

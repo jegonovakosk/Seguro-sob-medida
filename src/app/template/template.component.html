@@ -4,7 +4,7 @@
 
     <div class="menu-inicial">
             <p routerLink="/cadastro-segurado" style="cursor: pointer; outline: none" translate>Cadastrar/</p>
-            <p routerLink="/login" style="cursor: pointer; outline: none" translate>Login</p>
+            <p (click)="openDialog()" routerLink="/login" style="cursor: pointer; outline: none" translate >Login</p>
     </div>
     <ng-template ngxPermissionsOnly="AUTH">
 

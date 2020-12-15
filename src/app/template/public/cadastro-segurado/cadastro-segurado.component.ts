@@ -11,6 +11,9 @@ import { AuthService } from 'src/app/shared/auth/auth.service';
 })
 
 export class CadastroSeguradoComponent implements OnInit {
+  constructor(private router: Router,
+    private authService: AuthService) { }
+
 
 
 

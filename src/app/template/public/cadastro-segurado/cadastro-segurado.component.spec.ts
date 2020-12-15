@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CadastroSeguradoComponent } from './cadastro-segurado.component';
+import {Component, Inject} from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 describe('CadastroSeguradoComponent', () => {
   let component: CadastroSeguradoComponent;

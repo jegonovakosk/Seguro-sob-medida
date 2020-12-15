@@ -9,7 +9,8 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class CadastroSeguradoComponent implements OnInit {
-  hide = false;
+  hide = true;
+  seg2 = false;
   seg = false;
   formMode = 'cadastro'
 
@@ -25,17 +26,17 @@ export class CadastroSeguradoComponent implements OnInit {
 
   }
 
-  showSegurado(value) {
+  showSegurado() {
     if (this.seg === true) {
       this.seg = false;
     }
-    this.hide = !this.hide;
-    console.log(value)
+    this.seg2 = !this.seg2;
+    console.log()
   }
 
   showSeguradora() {
-    if (this.hide === true) {
-      this.hide = false;
+    if (this.seg2 === true) {
+      this.seg2 = false;
     }
     this.seg = !this.seg;
   }

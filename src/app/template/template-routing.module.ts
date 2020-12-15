@@ -6,6 +6,7 @@ import { LoginComponent } from './public/login/login.component';
 import { AuthGuard } from '../shared/auth/auth.guard';
 import { TermsComponent } from './public/terms/terms.component';
 
+
 const routes: Routes = [
   // PRIVATE
   { path: '', canActivate: [AuthGuard], loadChildren: () => import('./private/private.module').then(m => m.PrivateModule) },

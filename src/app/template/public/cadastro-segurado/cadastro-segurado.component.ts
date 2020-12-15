@@ -11,10 +11,7 @@ import { AuthService } from 'src/app/shared/auth/auth.service';
 })
 
 export class CadastroSeguradoComponent implements OnInit {
-  constructor(
-    private router: Router,
-    private authService: AuthService
-  ) { }
+
 
 
   hide = true;
@@ -52,4 +49,5 @@ export class CadastroSeguradoComponent implements OnInit {
     this.router.navigate(['/cadastro-segurado']);
 
   }
+
 }

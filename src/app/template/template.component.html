@@ -1,10 +1,10 @@
 <div [ngClass.gt-md]="{'padding-lg': true}" [ngClass.md]="{'padding-md': true}" [ngClass.sm]="{'padding-sm': true}"
     [ngClass.xs]="{'padding-xs': true}" appTheme class="in2me-nav shadow">
-    <img routerLink="/tela-inicio" src="../../assets/img/logo.png" alt="" class="logo">
+    <img routerLink="/tela-inicio" src="../../assets/img/logo.png" alt="" class="logo" translate>
 
     <div class="menu-inicial">
-        <p routerLink="/cadastro-segurado" style="cursor: pointer; outline: none" translate>Cadastrar/</p>
-        <p (click)="openDialog()" routerLink="/login" style="cursor: pointer; outline: none" translate>Login</p>
+        <p routerLink="/cadastro-segurado" style="cursor: pointer; outline: none" translate>Cadastrar | </p>
+        <p (click)="openDialog()" style="cursor: pointer; outline: none" translate> Login </p>
     </div>
     <ng-template ngxPermissionsOnly="AUTH">
 
@@ -18,7 +18,7 @@
     </div>
     <ng-template ngxPermissionsOnly="AUTH">
         <div (click)="clickOpenCloseMenuUser($event)" class="user-options" fxHide.lt-lg>
-            <span>{{ authService.isLogged() ? 'Dwayne Hoffmann' : 'Login' }}</span>
+            <span>{{ authService.isLogged() ? 'Dwayne Hoffmann' : '/login' }}</span>
             <div class="shadow-sm"></div>
         </div>
     </ng-template>

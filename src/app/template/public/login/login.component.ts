@@ -1,9 +1,9 @@
-import { TelaInicioComponent } from './../tela-inicio/tela-inicio.component';
-import { Router } from '@angular/router';
-import { Component, OnInit, ɵɵqueryRefresh } from '@angular/core';
+
+import { Component, Inject, OnInit, ɵɵqueryRefresh } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth/auth.service';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,10 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router, public dialogRef: MatDialogRef<LoginComponent>,
+  constructor(
+    public dialogRef: MatDialogRef<LoginComponent>,
+    private authService: AuthService,
+
   ) { }
 
 
@@ -37,18 +40,16 @@ export class LoginComponent implements OnInit {
       .subscribe(resp => {
         this.notLogged = false;
         this.authService.authenticateUser(resp);
+        this.onNoClick();
       }, error => {
         console.log(error);
         this.notLogged = true;
       });
   }
 
-  closeModal(): void {
+  onNoClick(): void {
     this.dialogRef.close();
   }
-
-
-
 
 
 }

@@ -1,6 +1,7 @@
 .in2me-nav {
   width: 100%;
-  height: var(--nav-height);;
+  height: var(--nav-height);
+  ;
   background-color: var(--nav-color);
   display: flex;
   flex-direction: row;
@@ -13,12 +14,12 @@
     color: var(--text-color);
   }
 
-  .logo{
+  .logo {
     width: 80px;
     height: 60px;
   }
 
-  .menu-inicial{
+  .menu-inicial {
     display: flex;
 
   }
@@ -118,4 +119,11 @@
   border-top: 1px solid #d1d1d1;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
 }

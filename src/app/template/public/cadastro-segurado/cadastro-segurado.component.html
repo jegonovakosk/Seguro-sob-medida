@@ -55,39 +55,39 @@
         <div class="cadastro-title mat-elevation-z10" fxLayoutAlign="center center">
             <h1 class="m-0" translate>Você é:</h1>
         </div>
+        <form (submit)="registerClient()" [formGroup]="form">
+            <div class=" input d-flex flex-column align-items-center" style="gap: 10px;">
 
-        <div class="d-flex flex-column align-items-center" style="gap: 10px;">
-            <mat-radio-group aria-label="Select an option">
-                <mat-radio-button value="1">Segurado</mat-radio-button>
-                <mat-radio-button value="2">Seguradora</mat-radio-button>
-            </mat-radio-group>
-        </div>
-        <br>
+                <mat-radio-group formControlName="type" aria-label="Select an option">
+                    <mat-radio-button value="1">Segurado</mat-radio-button>
+                    <mat-radio-button value="2">Seguradora</mat-radio-button>
+                </mat-radio-group>
+            </div>
 
-        <ng-container *ngIf="'cadastro'">
 
             <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="10px">
 
                 <mat-form-field appearance="outline">
                     <mat-label>CPF / CNPJ</mat-label>
-                    <input [formControl]="form.cnpj" matInput placeholder="CPF">
+                    <input formControlName="cnpj" matInput placeholder="CPF">
 
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
-                    <input [formControl]="form.email" matInput placeholder="Nome">
+                    <input formControlName="email" matInput placeholder="Nome">
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Enter your password</mat-label>
-                    <input [formControl]="form.password" matInput [type]="hide ? 'password' : 'text'">
+                    <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
                     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
 
-                <button (click)="registerClient()" class="mat-button uhp-mt-4 w-100">
+                <button type="submit" class="mat-button uhp-mt-4 w-100">
                     <span translate>Cadastrar</span>
                 </button>
             </div>
-        </ng-container>
+        </form>
+
     </div>
 </div>

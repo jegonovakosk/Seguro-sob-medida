@@ -1,6 +1,6 @@
 import { TelaInicioComponent } from './../tela-inicio/tela-inicio.component';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵɵqueryRefresh } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth/auth.service';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
@@ -12,7 +12,8 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router, public dialogRef: MatDialogRef<LoginComponent>,) { }
+  constructor(private authService: AuthService, private router: Router, public dialogRef: MatDialogRef<LoginComponent>,
+  ) { }
 
 
   form = {
@@ -42,10 +43,11 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  submitCadastro(): void{
-    this.router.navigate(['/cadastro-segurado']);
-
+  closeModal(): void {
+    this.dialogRef.close();
   }
+
+
 
 
 

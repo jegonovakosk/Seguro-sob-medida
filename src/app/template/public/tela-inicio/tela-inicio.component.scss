@@ -5,7 +5,8 @@
 }
 
 .fonteInicio{
-    font-size:30px;
+    margin-top: 50px;
+    font-size:35px;
     color: white;
     font-family: arial, sans-serif;
     font-weight: bold;
@@ -15,4 +16,14 @@
     width: auto;
     height: 650px;
     background-color: #8594e7;
+}
+
+.boxQS{
+    background: url(../../../../assets/img/comprador.png);
+    border-radius: 10px;
+    width: 800px;
+    height: 300px;
+    margin-top: 90px;
+    position: static;
+
 }

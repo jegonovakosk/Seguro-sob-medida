@@ -5,7 +5,7 @@ import { ThemeService } from '../shared/themes/theme.service';
 import { slideInAnimation } from '../shared/animations/animationTransition';
 import { Router, RouterOutlet } from '@angular/router';
 import { AuthService } from '../shared/auth/auth.service';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { LoginComponent } from './public/login/login.component';
 
 
@@ -133,9 +133,7 @@ export class TemplateComponent implements OnInit {
 
     //dialog do login
 
-    openDialog(): void {
-        this.dialog.open(LoginComponent, {
-            width: '500px',
-        });
+    openDialog() {
+        this.dialog.open(LoginComponent);
     }
 }

@@ -39,7 +39,7 @@ import { LoginComponent } from './public/login/login.component';
         ]),
     ],
     templateUrl: './template.component.html',
-    styleUrls: ['./template.component.scss', ]
+    styleUrls: ['./template.component.scss',]
 })
 export class TemplateComponent implements OnInit {
     menuState = 'closed';
@@ -134,8 +134,8 @@ export class TemplateComponent implements OnInit {
     //dialog do login
 
     openDialog(): void {
-        const dialogRef = this.dialog.open(LoginComponent, {
-          width: '500px',
+        this.dialog.open(LoginComponent, {
+            width: '500px',
         });
-      }
+    }
 }

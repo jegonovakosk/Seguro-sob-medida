@@ -22,7 +22,8 @@
     "LOGIN_FACEBOOK": "Entrar com Facebook",
     "LOGIN_GOOGLE": "Entrar com Google",
     "LOGIN_CADASTRAR_SEGURADO":"Segurado",
-    "LOGIN_CADASTRAR_SEGURADORA":"Seguradora"
+    "LOGIN_CADASTRAR_SEGURADORA":"Seguradora",
+    "LOGIN_CANCELAR": "Cancelar"
   },
   "PROFILE": {
     "EDIT": "Editar"

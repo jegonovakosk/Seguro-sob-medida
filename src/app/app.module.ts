@@ -10,8 +10,8 @@ import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSelectModule} from '@angular/material/select';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
 import { RouteReuseStrategy } from '@angular/router';
 import { RouteReuseService } from './services/RouteReuseService';
 import { ComponentsModule } from './shared/components/components.module';
@@ -62,11 +62,11 @@ export class HammerConfig extends HammerGestureConfig {
             provide: RouteReuseStrategy,
             useClass: RouteReuseService
         },
-      {
-        provide: HTTP_INTERCEPTORS,
-        useClass: TokenInterceptor,
-        multi: true
-      }
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: TokenInterceptor,
+            multi: true
+        }
     ],
     bootstrap: [AppComponent]
 })

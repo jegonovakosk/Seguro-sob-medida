@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/shared/auth/auth.service';
 
 
@@ -12,38 +12,38 @@ import { AuthService } from 'src/app/shared/auth/auth.service';
 
 export class CadastroSeguradoComponent implements OnInit {
 
-
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private formBuilder: FormBuilder
+  ) { }
 
   hide = true;
   formMode = 'cadastro'
 
-  form = {
-    email: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required]),
-    cnpj: new FormControl('', [Validators.required]),
-    type: new FormControl('', [Validators.required])
-  };
+  form: FormGroup;
 
-  registerClient(value): void {
-    const register = {
-      email: this.form.email.value,
-      password: this.form.password.value,
-      cnpj: this.form.cnpj.value,
-      type: this.form.type.value
-    }
-    register.type = "1";
-    this.authService.doRegister(register)
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+      cnpj: ['', [Validators.required]],
+      type: ['', [Validators.required]]
+    });
+  }
+
+  registerClient(): void {
+    console.log(this.form.value)
+    this.authService.doRegister(this.form.value)
       .subscribe(resp => {
         console.log(resp);
       }, error => {
         console.log(error);
       }
       )
-    console.log(register);
+
   }
 
-  ngOnInit(): void {
-  }
 
   submitCadastro(): void {
     this.router.navigate(['/cadastro-segurado']);

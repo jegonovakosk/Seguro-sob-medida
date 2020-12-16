@@ -1,10 +1,10 @@
 <div [ngClass.gt-md]="{'padding-lg': true}" [ngClass.md]="{'padding-md': true}" [ngClass.sm]="{'padding-sm': true}"
     [ngClass.xs]="{'padding-xs': true}" appTheme class="in2me-nav shadow">
-    <img src="../../assets/img/logo.png" alt="" class="logo">
+    <img routerLink="/tela-inicio" src="../../assets/img/logo.png" alt="" class="logo">
 
     <div class="menu-inicial">
-            <p routerLink="/cadastro-segurado" style="cursor: pointer; outline: none" translate>Cadastrar/</p>
-            <p routerLink="/login" style="cursor: pointer; outline: none" translate>Login</p>
+        <p routerLink="/cadastro-segurado" style="cursor: pointer; outline: none" translate>Cadastrar/</p>
+        <p (click)="openDialog()" routerLink="/login" style="cursor: pointer; outline: none" translate>Login</p>
     </div>
     <ng-template ngxPermissionsOnly="AUTH">
 
@@ -22,6 +22,8 @@
             <div class="shadow-sm"></div>
         </div>
     </ng-template>
+
+
 
 
 </div>
@@ -67,5 +69,6 @@
             <span class="material-icons">{{item.icon}}</span>
         </div>
     </ng-container>
+
 
 </div>

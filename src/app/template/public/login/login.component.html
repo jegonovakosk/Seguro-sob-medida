@@ -1,50 +1,51 @@
-<div class="app-container" fxLayout="column" fxLayoutAlign="center center">
+<div class="mat-card mat-elevation-z10 mb-5" fxLayout="column" ngClass.gt-xs="login-content"
+    ngClass.lt-sm="login-content-sm">
 
-    <div class="mat-card mat-elevation-z10 mb-5" fxLayout="column" ngClass.gt-xs="login-content"
-        ngClass.lt-sm="login-content-sm">
+    <div class="login-title" fxLayoutAlign="center center">
+        <img src="../../../../assets/img/logo.png" alt="" class="logo">
+    </div>
+    <ng-container *ngIf="formMode === 'login'">
 
-        <div class="login-title" fxLayoutAlign="center center">
-            <img src="../../../../assets/img/logo.png" alt="" class="logo">
+
+        <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="10px">
+            <mat-form-field appearance="outline">
+                <mat-label translate>LOGIN.USER</mat-label>
+                <input [formControl]="form.user" autocomplete="off" matInput name="user" type="text">
+                <mat-icon matSuffix>account_circle</mat-icon>
+                <mat-error *ngIf="form.user.invalid">{{'invalid user'}}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label translate>LOGIN.PASSWORD</mat-label>
+                <input [formControl]="form.password" matInput name="password" type="password">
+                <mat-icon matSuffix>vpn_key</mat-icon>
+                <mat-error *ngIf="form.password.invalid">{{'invalid password'}}</mat-error>
+            </mat-form-field>
         </div>
-        <ng-container *ngIf="formMode === 'login'">
+    </ng-container>
+    <div class="mb-2" fxLayoutAlign="center center">
+        <mat-error *ngIf="notLogged" translate>LOGIN.INVALID</mat-error>
+    </div>
 
+    <div class="d-flex flex-column align-items-center" style="gap: 10px;">
+        <!-- LOGIN -->
+        <button (click)="submitLogin()" class="mat-button uhp-mt-4 w-100">
+            <span translate>LOGIN.LOGIN_BTN</span>
+        </button>
+        <button (click)="closeModal()" class="mat-button uhp-mt-4 w-100">
+            <span translate>LOGIN.LOGIN_CANCELAR</span>
+        </button>
 
-            <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="10px">
-                <mat-form-field appearance="outline">
-                    <mat-label translate>LOGIN.USER</mat-label>
-                    <input [formControl]="form.user" autocomplete="off" matInput name="user" type="text">
-                    <mat-icon matSuffix>account_circle</mat-icon>
-                    <mat-error *ngIf="form.user.invalid">{{'invalid user'}}</mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline">
-                    <mat-label translate>LOGIN.PASSWORD</mat-label>
-                    <input [formControl]="form.password" matInput name="password" type="password">
-                    <mat-icon matSuffix>vpn_key</mat-icon>
-                    <mat-error *ngIf="form.password.invalid">{{'invalid password'}}</mat-error>
-                </mat-form-field>
-            </div>
-        </ng-container>
-        <div class="mb-2" fxLayoutAlign="center center">
-            <mat-error *ngIf="notLogged" translate>LOGIN.INVALID</mat-error>
-        </div>
-
-        <div class="d-flex flex-column align-items-center" style="gap: 10px;">
-            <!-- LOGIN -->
-            <button (click)="submitLogin()" class="mat-button uhp-mt-4 w-100">
-                <span translate>LOGIN.LOGIN_BTN</span>
-            </button>
-
-            <!-- LOGIN FACEBOOK -->
-            <!-- <button (click)="submitLogin()" class="mat-button uhp-mt-8 w-100" fxLayoutAlign="start center">
+        <!-- LOGIN FACEBOOK -->
+        <!-- <button (click)="submitLogin()" class="mat-button uhp-mt-8 w-100" fxLayoutAlign="start center">
                 <span fxFlex="100" translate>
                   LOGIN.LOGIN_FACEBOOK
                 </span>
             </button> -->
-            <!--LOGIN GOOGLE-->
-        </div>
-
+        <!--LOGIN GOOGLE-->
     </div>
-    <!-- <div class="mat-card mat-elevation-z10 mb-5" fxLayout="column" ngClass.gt-xs="login-content"
+
+</div>
+<!-- <div class="mat-card mat-elevation-z10 mb-5" fxLayout="column" ngClass.gt-xs="login-content"
         ngClass.lt-sm="login-content-sm">
         <h2 style="color: black;">Ainda nao tem acesso cadastre-se aqui</h2>
         <h2 style="color: black;">Você é:</h2>
@@ -61,4 +62,3 @@
         </button>
 
 </div> -->
-</div>

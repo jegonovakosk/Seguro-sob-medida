@@ -14,7 +14,8 @@
     "LOGIN_FACEBOOK": "Entrar com Facebook",
     "LOGIN_GOOGLE": "Entrar com Google",
     "INVALID": "Eh lasqueira, as informações estão inválidas",
-    "LOGIN_CADASTRAR": "BORA VAGABUNDO CADASTRAR"
+    "LOGIN_CADASTRAR": "BORA VAGABUNDO CADASTRAR",
+    "LOGIN_CANCELAR": "Cancelar"
   },
   "PROFILE": {
     "EDIT": "Editar"

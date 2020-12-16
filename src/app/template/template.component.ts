@@ -5,6 +5,9 @@ import { ThemeService } from '../shared/themes/theme.service';
 import { slideInAnimation } from '../shared/animations/animationTransition';
 import { Router, RouterOutlet } from '@angular/router';
 import { AuthService } from '../shared/auth/auth.service';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { LoginComponent } from './public/login/login.component';
+
 
 @Component({
     selector: 'app-template',
@@ -36,7 +39,7 @@ import { AuthService } from '../shared/auth/auth.service';
         ]),
     ],
     templateUrl: './template.component.html',
-    styleUrls: ['./template.component.scss']
+    styleUrls: ['./template.component.scss',]
 })
 export class TemplateComponent implements OnInit {
     menuState = 'closed';
@@ -60,6 +63,7 @@ export class TemplateComponent implements OnInit {
     constructor(private translate: TranslateService,
         public authService: AuthService,
         private router: Router,
+        public dialog: MatDialog,
         private themeService: ThemeService) {
         this.translate.setDefaultLang('formal');
     }
@@ -127,4 +131,11 @@ export class TemplateComponent implements OnInit {
         this.authService.doLogout();
     }
 
+    //dialog do login
+
+    openDialog(): void {
+        this.dialog.open(LoginComponent, {
+            width: '500px',
+        });
+    }
 }

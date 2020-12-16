@@ -13,8 +13,8 @@ export const themes = {
     '--primary': '#212121',
     //botões iniciais
     '--primary-color': '#8594e7',
-    //fundo da tela de icones iniciais
-    '--primary-background': '#DCEDC8',
+    //fundo da tela de icones iniciais depois do login
+    '--primary-background': '#f6f6f6',
     '--secondary': '#757575',
     //cor da logomarca
     '--secondary-color': '#66b3ff',

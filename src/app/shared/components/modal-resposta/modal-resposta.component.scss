@@ -1,7 +1,7 @@
 .close {
   position: absolute;
   right: 0;
-  cursor: pointer
+  cursor: pointer;
 }
 
 mat-icon {
@@ -9,8 +9,8 @@ mat-icon {
 }
 
 .mat-size-lt {
-  height: 400px;
-  width: 700px;
+  height: 200px;
+  width: 500px;
 }
 
 
@@ -21,7 +21,7 @@ mat-icon {
 
 
 .mat-size-sm {
-  height: 400px;
+  height: 250px;
   width: 250px;
 }
 
@@ -45,6 +45,8 @@ mat-icon {
   margin-bottom: 10px;
   color: white;
 }
+
+
 
 .next-btn {
   background-color: #54d854;

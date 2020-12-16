@@ -17,7 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CadastroSeguradoComponent } from './cadastro-segurado/cadastro-segurado.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { TelaInicioComponent } from './tela-inicio/tela-inicio.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({

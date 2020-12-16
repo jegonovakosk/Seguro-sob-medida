@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/shared/auth/auth.service';
 
+import Swal from 'sweetalert2'
+
 
 @Component({
   selector: 'app-cadastro-segurado',
@@ -37,6 +39,7 @@ export class CadastroSeguradoComponent implements OnInit {
     this.authService.doRegister(this.form.value)
       .subscribe(resp => {
         console.log(resp);
+        this.AlertConrfirm();
       }, error => {
         console.log(error);
       }
@@ -48,6 +51,16 @@ export class CadastroSeguradoComponent implements OnInit {
   submitCadastro(): void {
     this.router.navigate(['/cadastro-segurado']);
 
+  }
+
+  AlertConrfirm() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Usuario Cadastrado com sucesso !',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    this.router.navigate(['tela-inicio']);
   }
 
 }

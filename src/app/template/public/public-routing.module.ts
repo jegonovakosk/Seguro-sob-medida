@@ -10,14 +10,14 @@ import { CadastroSeguradoComponent } from './cadastro-segurado/cadastro-segurado
 import { TelaInicioComponent } from './tela-inicio/tela-inicio.component';
 
 const routes: Routes = [
-    {path: 'login', component: LoginComponent},
-    {path: 'cadastro-segurado', component: CadastroSeguradoComponent},
-    {path: 'terms', component: TermsComponent},
-    {path: 'faq', component: FaqComponent},
-    {path: 'support', component: SupportComponent},
-    {path: 'user-policy', component: UserPolicyComponent},
-    {path: 'privacy', component: PrivacyComponent},
-    {path: 'tela-inicio', component: TelaInicioComponent}
+    { path: 'login', component: LoginComponent },
+    { path: 'cadastro-segurado', component: CadastroSeguradoComponent },
+    { path: 'terms', component: TermsComponent },
+    { path: 'faq', component: FaqComponent },
+    { path: 'support', component: SupportComponent },
+    { path: 'user-policy', component: UserPolicyComponent },
+    { path: 'privacy', component: PrivacyComponent },
+    { path: 'tela-inicio', component: TelaInicioComponent }
 
 ];
 

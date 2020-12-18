@@ -7,14 +7,13 @@ import { NgxPermissionsService } from 'ngx-permissions';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class AuthService {
   baseUrl = environment.baseUrl;
-  permissions = ['AUTH'];
 
   constructor(private httpClient: HttpClient,
-    private router: Router,
-    private permissionsService: NgxPermissionsService) {
+              private router: Router,
+              private permissionsService: NgxPermissionsService) {
   }
 
 
@@ -35,9 +34,28 @@ export class AuthService {
       user: data.user,
       access_token: data.access_token
     };
+
     window.localStorage.setItem(LocalStorage.LOGIN_STORAGE, JSON.stringify(loginStorage));
     this.router.navigate(['/']);
-    this.permissionsService.loadPermissions(this.permissions);
+  }
+
+  loadPermissions(): void {
+    this.setUserType(this.getUser().user_type);
+    this.permissionsService.removePermission('NOT_LOGGED');
+    this.permissionsService.addPermission('AUTH');
+
+  }
+
+  setUserType(userType): void {
+    switch (userType) {
+      case 2: {
+        this.permissionsService.addPermission('SELLER');
+        break;
+      }
+      default: {
+        this.permissionsService.addPermission('BUYER');
+      }
+    }
   }
 
   isLogged(): boolean {
@@ -47,9 +65,10 @@ export class AuthService {
 
   doLogout(): void {
     window.localStorage.removeItem(LocalStorage.LOGIN_STORAGE);
-    this.router.navigate(['/login']);
-    this.permissionsService.loadPermissions([]);
+    this.router.navigate(['/tela-inicio']);
+    this.permissionsService.loadPermissions(['NOT_LOGGED']);
   }
+
   getToken(): any {
     const loginStorage: LoginStorage = JSON.parse(window.localStorage.getItem(LocalStorage.LOGIN_STORAGE));
     return loginStorage?.access_token;

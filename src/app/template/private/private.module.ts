@@ -24,36 +24,36 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { NewUserComponent } from './new-user/new-user.component';
 
 @NgModule({
-    declarations: [
-        HomeComponent,
-        NotificationsComponent,
-        ProfileComponent,
-        SettingsComponent,
-        UserComponent,
-        PrivacyComponent,
-        NewUserComponent,
-    ],
-    imports: [
-        CommonModule,
-        PickerModule,
-        PrivateRoutingModule,
-        I18nModule,
-        FlexLayoutModule,
-        NgxSkeletonLoaderModule,
-        StopPropagationModule,
-        ComponentsModule,
-        NgxPermissionsModule.forChild(),
-        MatFormFieldModule,
-        MatInputModule,
-        MatSelectModule,
-        ReactiveFormsModule,
-        FormsModule,
-        MatCheckboxModule,
-        MatRadioModule,
-        MatDialogModule
-    ],
-    exports: [],
-    providers: [],
+  declarations: [
+    HomeComponent,
+    NotificationsComponent,
+    ProfileComponent,
+    SettingsComponent,
+    UserComponent,
+    PrivacyComponent,
+    NewUserComponent,
+  ],
+  imports: [
+    CommonModule,
+    PickerModule,
+    PrivateRoutingModule,
+    I18nModule,
+    FlexLayoutModule,
+    NgxSkeletonLoaderModule,
+    StopPropagationModule,
+    ComponentsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatDialogModule,
+    NgxPermissionsModule.forChild()
+  ],
+  exports: [],
+  providers: [],
 })
 export class PrivateModule {
 }

@@ -1,0 +1,129 @@
+.in2me-nav {
+  width: 100%;
+  height: var(--nav-height);
+  ;
+  background-color: var(--nav-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+
+  h1 {
+    margin: 0;
+    color: var(--text-color);
+  }
+
+  .logo {
+    width: 80px;
+    height: 60px;
+  }
+
+  .menu-inicial {
+    display: flex;
+
+  }
+
+
+  .search {
+    min-width: 300px;
+    height: 50px;
+    border-radius: 15px;
+    border: 1px solid #d1d1d1;
+    background-color: var(--white);
+    margin-left: 40px;
+  }
+
+  .search-xs {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+
+  .user-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 15px;
+    height: 68px;
+    padding: 0 20px;
+    color: var(--text-color);
+
+    div {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-color: #d1d1d1;
+    }
+
+  }
+
+}
+
+.nav-menu {
+  position: absolute;
+  top: var(--nav-height);
+  left: 0;
+  margin-left: -300px;
+  width: 250px;
+  height: auto;
+  background-color: var(--white);
+  border-bottom-right-radius: 15px;
+  border-right: 1px solid #d1d1d1;
+  border-bottom: 1px solid #d1d1d1;
+  z-index: 10;
+}
+
+.user-menu {
+  position: absolute;
+  top: var(--nav-height);
+  right: 100px;
+  width: 200px;
+  opacity: 1;
+  height: auto;
+  background-color: var(--white);
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-right: 1px solid #d1d1d1;
+  border-left: 1px solid #d1d1d1;
+  border-bottom: 1px solid #d1d1d1;
+  z-index: 10;
+}
+
+.focus {
+  width: 100%;
+  height: 200vh;
+  position: absolute;
+  background-color: black;
+  z-index: 5;
+  display: none;
+  opacity: 0.2;
+}
+
+.seg-footer {
+  gap: 15px;
+  background-color: var(--footer-background);
+  height: var(--footer-height);
+  color: var(--text-color)
+}
+
+.mobile-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  background-color: var(--primary-background);
+  border-top: 1px solid #d1d1d1;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}

@@ -1,0 +1,151 @@
+.in2m-profile {
+    min-height: 100vh;
+    background-color: var(--body-background);
+  touch-action: pan-y !important;
+}
+
+.profile-card {
+  border: 1px solid #d1d1d1;
+  border-radius: 15px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--primary-background);
+  color: var(--text-color) !important;
+
+  .cover {
+    height: 45%;
+    width: 100%;
+    border-bottom: 1px solid #d1d1d1;
+    background-color: #f1f1f1;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  .user {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid #d1d1d1;
+    background-color: #e1e1e1;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 25px;
+
+    .item {
+      padding-top: 20px;
+      width: auto;
+      display: flex;
+      gap: 15px;
+      cursor: pointer;
+      outline: none;
+
+      span:first-child {
+        font-weight: bold;
+      }
+
+    }
+
+    .edit {
+      display: flex;
+      flex: 1 1 100%;
+      justify-content: flex-end;
+      margin: 10px;
+
+      div {
+        cursor: pointer;
+        padding: 5px 15px;
+        border-radius: 15px;
+        border: 1px solid #d1d1d1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+
+      }
+
+    }
+  }
+
+  .description {
+    .name {
+      display: flex;
+      gap: 5px;
+
+      span:first-child {
+        font-weight: bold;
+        font-size: 25px;
+        margin: 0 !important;
+      }
+
+    }
+
+    .about {
+      margin-top: 10px;
+      margin-right: 40px;
+    }
+  }
+
+  .sm-description {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+
+
+
+    .items {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+      }
+
+    }
+
+  }
+}
+
+.pad-lg {
+  padding-left: 20%;
+}
+
+.pad-md {
+  padding-left: 25%;
+}
+
+.desc-lg {
+  padding-left: 50px;
+  margin-top: 35px;
+}
+
+.desc-sm {
+  padding-left: 20px;
+  margin-top: 25px;
+}
+
+.user-lg {
+  top: 30%;
+  left: 50px;
+  width: 150px;
+  height: 150px;
+}
+
+.user-sm {
+  top: 35%;
+  left: 20px;
+  width: 100px;
+  height: 100px;
+}
+

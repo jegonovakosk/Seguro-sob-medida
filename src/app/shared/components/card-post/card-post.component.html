@@ -1,0 +1,39 @@
+<div class="post-card my-2 w-100 mb-3"
+     fxLayout="column">
+  <div class="m-3" fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayout="row" fxLayoutGap="15px">
+      <div [style.background]="'url(' + post.user.profileImage + ') round'"
+           class="profile shadow-sm">
+
+      </div>
+      <div fxLayout="column" fxLayoutAlign="start start">
+        <div class="name">
+          <span > <span>{{post?.user?.name}}</span> </span>
+          <span class="time">{{this.howLongDoes()}}</span>
+        </div>
+      </div>
+    </div>
+    <div>
+                        <span (click)="openCloseDrop($event)"
+                              class="material-icons">more_vert</span>
+
+    </div>
+  </div>
+  <div class="description ml-3 mr-3">
+                <span>
+                    {{post.description}}
+                </span>
+  </div>
+  <div style="border-top: 1px solid #d1d1d1; border-bottom: 1px solid #d1d1d1; height: auto; width: 100%">
+    <div [style.background]="'url('+post.img+') round'"
+         style="height: 250px; width: 100%; background-repeat: no-repeat">
+    </div>
+
+  </div>
+  <div class="mt-2 ml-2 reactions" fxLayout="row" fxLayoutAlign="space-between center"
+       fxLayoutGap="10px">
+  </div>
+  <div class="m-2" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+  </div>
+</div>
+

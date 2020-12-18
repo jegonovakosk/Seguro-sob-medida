@@ -1,0 +1,65 @@
+.close {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+
+mat-icon {
+  color: red;
+}
+
+.mat-size-lt {
+  height: 200px;
+  width: 500px;
+}
+
+
+.mat-size-md {
+  height: 400px;
+  width: 350px;
+}
+
+
+.mat-size-sm {
+  height: 250px;
+  width: 250px;
+}
+
+.seg-btn-lt {
+  height: 45px;
+  width: 150px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.seg-btn-md {
+  height: 40px;
+  width: 130px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.seg-btn-sm {
+  height: 40px;
+  width: 80px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+
+
+.next-btn {
+  background-color: #54d854;
+}
+
+.finish-btn {
+  background-color: var(--primary);
+}
+
+.back-btn {
+  background-color: var(--body-background);
+}
+
+.cancel-btn {
+  background-color: #ff4c4d;
+}

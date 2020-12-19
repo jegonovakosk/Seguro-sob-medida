@@ -20,10 +20,18 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { NewUserComponent } from './new-user/new-user.component';
+import { TelaSeguradoComponent } from './tela-segurado/tela-segurado.component'
+
 
 @NgModule({
+<<<<<<< Updated upstream
     declarations: [
         HomeComponent,
         NotificationsComponent,
@@ -54,6 +62,44 @@ import { NewUserComponent } from './new-user/new-user.component';
     ],
     exports: [],
     providers: [],
+=======
+  declarations: [
+    HomeComponent,
+    NotificationsComponent,
+    ProfileComponent,
+    SettingsComponent,
+    UserComponent,
+    PrivacyComponent,
+    NewUserComponent,
+    TelaSeguradoComponent
+  ],
+  imports: [
+    CommonModule,
+    PickerModule,
+    PrivateRoutingModule,
+    I18nModule,
+    FlexLayoutModule,
+    NgxSkeletonLoaderModule,
+    StopPropagationModule,
+    ComponentsModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatDialogModule,
+    NgxPermissionsModule.forChild(),
+    MatToolbarModule,
+    MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule
+  ],
+  exports: [],
+  providers: [],
+>>>>>>> Stashed changes
 })
 export class PrivateModule {
 }

@@ -18,6 +18,11 @@ import { CadastroSeguradoComponent } from './cadastro-segurado/cadastro-segurado
 import { MatRadioModule } from '@angular/material/radio';
 import { TelaInicioComponent } from './tela-inicio/tela-inicio.component';
 import { MatDialogModule } from '@angular/material/dialog';
+<<<<<<< Updated upstream
+=======
+import { NgxPermissionsModule } from "ngx-permissions";
+;
+>>>>>>> Stashed changes
 
 
 @NgModule({
@@ -29,7 +34,7 @@ import { MatDialogModule } from '@angular/material/dialog';
         LoginComponent,
         PrivacyComponent,
         CadastroSeguradoComponent,
-        TelaInicioComponent
+        TelaInicioComponent,
     ],
     imports: [
         CommonModule,

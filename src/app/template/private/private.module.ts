@@ -22,6 +22,13 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NewUserComponent } from './new-user/new-user.component';
+import { TelaSeguradoraComponent } from './tela-seguradora/tela-seguradora.component';
+
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -32,6 +39,7 @@ import { NewUserComponent } from './new-user/new-user.component';
     UserComponent,
     PrivacyComponent,
     NewUserComponent,
+    TelaSeguradoraComponent,
   ],
   imports: [
     CommonModule,
@@ -50,7 +58,13 @@ import { NewUserComponent } from './new-user/new-user.component';
     MatCheckboxModule,
     MatRadioModule,
     MatDialogModule,
-    NgxPermissionsModule.forChild()
+    NgxPermissionsModule.forChild(),
+    MatTableModule,
+    MatPaginatorModule,
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule
+
   ],
   exports: [],
   providers: [],

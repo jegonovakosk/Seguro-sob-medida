@@ -10,16 +10,17 @@ export class ModalRespostaComponent implements OnInit {
 
   position = 0;
   rate;
+  showButton: boolean = true;
 
   constructor(private matDialogService: MatDialogRef<any>,
-              @Inject(MAT_DIALOG_DATA) public questions: []) {
+    @Inject(MAT_DIALOG_DATA) public questions: []) {
   }
 
   ngOnInit(): void {
     console.log(this.questions);
   }
 
-  onClickNext(): void{
+  onClickNext(): void {
     if (this.position === this.questions.length) {
       this.matDialogService.close(this.questions);
     }

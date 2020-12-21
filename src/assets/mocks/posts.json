@@ -9,18 +9,18 @@
   },
   {
     "user": {
-      "name": "Super Seguros",
-      "profileImage": "https://ivancco.com.br/wp-content/uploads/2017/11/LOGO-CURTI-CORRETORA-DE-SEGUROS.jpg"
-    },
-    "description": "Não perca essa incrivel promoção!",
-    "img": "https://lh3.googleusercontent.com/proxy/24MGbMSVbUWSTvakALgyrrTdJcarw_bOx6BJHEj6uoZIMQxaceZ8q0uymT0J01FZ1Fwlfk8UrG6q6ULezPwSKFLIiRafJPpmmkNrXUCnF52ub5oqesJRkMubLld392I42dkoJhY"
-  },
-  {
-    "user": {
       "name": "Zezinho da padoca",
       "profileImage": "https://olhardigital.com.br/wp-content/uploads/2019/07/20190715120542.jpg"
     },
     "description": "5 MOTIVOS PARA CONTRATAR UM SEGURO DE VIDA",
     "img": "https://seguros.sompo.com.br/hs-fs/hubfs/Duvidas%20sobre%20o%20Seguro%20de%20Vida.jpg?width=600&name=Duvidas%20sobre%20o%20Seguro%20de%20Vida.jpg"
+  },
+  {
+    "user": {
+      "name": "Super Seguros",
+      "profileImage": "https://ivancco.com.br/wp-content/uploads/2017/11/LOGO-CURTI-CORRETORA-DE-SEGUROS.jpg"
+    },
+    "description": "Não perca essa incrivel promoção!",
+    "img": "https://lh3.googleusercontent.com/proxy/24MGbMSVbUWSTvakALgyrrTdJcarw_bOx6BJHEj6uoZIMQxaceZ8q0uymT0J01FZ1Fwlfk8UrG6q6ULezPwSKFLIiRafJPpmmkNrXUCnF52ub5oqesJRkMubLld392I42dkoJhY"
   }
 ]

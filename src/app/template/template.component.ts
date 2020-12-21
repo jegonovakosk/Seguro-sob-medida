@@ -141,4 +141,15 @@ export class TemplateComponent implements OnInit {
       minWidth: '400px'
     });
   }
+
+  navegar() {
+    if (this.authService.isLogged) {
+      this.router.navigate(['/']);
+
+    } else {
+      this.router.navigate(['/tela-inicio']);
+
+    }
+
+  }
 }

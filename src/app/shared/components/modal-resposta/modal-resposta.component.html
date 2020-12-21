@@ -17,9 +17,9 @@
 
     <!-- TEXTO -->
     <!--    <ng-container *ngIf="questions[position]?.type === 'TEXT'">-->
-    <ng-container>
+    <ng-container *ngIf="questions[position]?.tipo ==='T'">
 
-      <div *ngIf="questions[position]">
+      <div>
         <mat-form-field appearance="outline">
           <input [(ngModel)]="questions[position].resposta" autocomplete="off" matInput name="resposta">
         </mat-form-field>
@@ -27,8 +27,6 @@
       </div>
 
     </ng-container>
-<<<<<<< Updated upstream
-=======
     <ng-container class="mat-button" *ngIf="questions[position]?.tipo === 'B'">
 
       <div *ngIf="questions[position]">
@@ -54,7 +52,6 @@
         </ng-container>
       </div>
     </ng-container>
->>>>>>> Stashed changes
   </ng-container>
   <!-- CHECKBOX -->
   <!--    <ng-container *ngIf="questions[position]?.type === 'COMBO'">-->
@@ -87,24 +84,6 @@
 
 <ng-container *ngIf="questions.length !== position">
   <mat-dialog-actions fxLayoutAlign="space-between center ">
-<<<<<<< Updated upstream
-    <button (click)="onClickBack()"
-            [disabled]="false"
-            [ngClass]="{'cancel-btn': position === 0, 'back-btn': position !== 0}"
-            class="seg-btn-lt"
-            mat-button
-            ngClass.lt-md="seg-btn-md"
-            ngClass.lt-sm="seg-btn-sm">
-      {{ position === 0 ? 'Cancelar' : 'Voltar'}}
-    </button>
-    <button (click)="onClickNext()"
-            [disabled]="!questions[position]?.resposta"
-            [ngClass]="{'next-btn': position !== questions.length - 1, 'finish-btn': position === questions.length - 1 }"
-            class="seg-btn-lt"
-            mat-button
-            ngClass.lt-md="seg-btn-md"
-            ngClass.lt-sm="seg-btn-sm">
-=======
     <button (click)="onClickBack()" [ngClass]="{'cancel-btn': position === 0, 'back-btn': position !== 0}"
       class="seg-btn-lt" mat-button ngClass.lt-md="seg-btn-md" ngClass.lt-sm="seg-btn-sm">
       {{ position === 0 ? 'Cancelar' : 'Voltar'}}
@@ -112,7 +91,6 @@
     <button (click)="onClickNext()"
       [ngClass]="{'next-btn': position !== questions.length - 1, 'finish-btn': position === questions.length - 1 }"
       class="seg-btn-lt" mat-button ngClass.lt-md="seg-btn-md" ngClass.lt-sm="seg-btn-sm">
->>>>>>> Stashed changes
       {{ position === questions.length - 1 ? 'Concluir' : 'Próxima'}}
     </button>
   </mat-dialog-actions>

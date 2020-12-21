@@ -1,10 +1,11 @@
 <div [ngClass.gt-md]="{'padding-lg': true}" [ngClass.md]="{'padding-md': true}" [ngClass.sm]="{'padding-sm': true}"
     [ngClass.xs]="{'padding-xs': true}" appTheme class="in2me-nav shadow">
-    <img routerLink="/tela-inicio" src="../../assets/img/logo.png" alt="" class="logo" translate>
+    <img (click)="navegar()" src="../../assets/img/logo.png" alt="" class="logo" translate>
     <ng-template ngxPermissionsOnly="NOT_LOGGED">
 
         <div class="menu-inicial">
-            <button button mat-button routerLink="/cadastro-segurado" class="mat-button uhp-mt-4 w-100"> Cadastrar
+            <button button mat-button routerLink="/cadastro-segurado" class="mat-button uhp-mt-4 w-100"
+                style="padding: 12px;"> Cadastrar
             </button>
             <button button mat-button (click)="openDialog()" class="mat-button uhp-mt-4 w-100"> Login </button>
         </div>

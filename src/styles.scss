@@ -143,3 +143,9 @@ input.mat-input-element {
 .w-95 {
   width: 95%;
 }
+
+.mat-dialog-container {
+  overflow: hidden !important;
+  border-radius: 5px !important;
+  background-color: plum !important;
+}

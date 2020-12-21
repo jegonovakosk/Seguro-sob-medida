@@ -22,38 +22,52 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NewUserComponent } from './new-user/new-user.component';
+import { TelaSeguradoraComponent } from './tela-seguradora/tela-seguradora.component';
+
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
-    declarations: [
-        HomeComponent,
-        NotificationsComponent,
-        ProfileComponent,
-        SettingsComponent,
-        UserComponent,
-        PrivacyComponent,
-        NewUserComponent,
-    ],
-    imports: [
-        CommonModule,
-        PickerModule,
-        PrivateRoutingModule,
-        I18nModule,
-        FlexLayoutModule,
-        NgxSkeletonLoaderModule,
-        StopPropagationModule,
-        ComponentsModule,
-        NgxPermissionsModule.forChild(),
-        MatFormFieldModule,
-        MatInputModule,
-        MatSelectModule,
-        ReactiveFormsModule,
-        FormsModule,
-        MatCheckboxModule,
-        MatRadioModule,
-        MatDialogModule
-    ],
-    exports: [],
-    providers: [],
+  declarations: [
+    HomeComponent,
+    NotificationsComponent,
+    ProfileComponent,
+    SettingsComponent,
+    UserComponent,
+    PrivacyComponent,
+    NewUserComponent,
+    TelaSeguradoraComponent,
+  ],
+  imports: [
+    CommonModule,
+    PickerModule,
+    PrivateRoutingModule,
+    I18nModule,
+    FlexLayoutModule,
+    NgxSkeletonLoaderModule,
+    StopPropagationModule,
+    ComponentsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatDialogModule,
+    NgxPermissionsModule.forChild(),
+    MatTableModule,
+    MatPaginatorModule,
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule
+
+  ],
+  exports: [],
+  providers: [],
 })
 export class PrivateModule {
 }

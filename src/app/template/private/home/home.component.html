@@ -1,9 +1,6 @@
 <!-- CONTAINER -->
 <div (swipeleft)="onSwipeLeft()" (swiperight)="onSwipeRight()" class="in2me-home" fxLayout.gt-md="row"
-     fxLayout.lt-lg="column"
-     fxLayoutAlign.gt-md="none none"
-     fxLayoutAlign.lt-lg="center center"
->
+    fxLayout.lt-lg="column" fxLayoutAlign.gt-md="none none" fxLayoutAlign.lt-lg="center center">
     <!--  LEFT CONTENT  -->
     <div class="col-3" fxHide.lt-lg fxLayout="column" fxLayoutAlign="start end" style="padding: 25px 0;">
         <app-side-menu class="w-75">
@@ -12,21 +9,36 @@
     </div>
     <!--  END LEFT CONTENT  -->
     <!--  CENTER CONTENT    -->
-    <div [ngClass.gt-md]="{'col-6': true}"
-         [ngClass.sm]="{'col-10': true}"
-         [ngClass.xs]="{'col-10': true}"
-         fxLayoutAlign="center center">
-        <div [ngStyle.xs]="'min-width: calc(100vw - 30px)'" fxLayout="column"
-             fxLayoutAlign.gt-md="start center" fxLayoutAlign.lt-lg="center center" style="width:  510px;">
+    <div [ngClass.gt-md]="{'col-6': true}" [ngClass.sm]="{'col-10': true}" [ngClass.xs]="{'col-10': true}"
+        fxLayoutAlign="center center">
+        <div [ngStyle.xs]="'min-width: calc(100vw - 30px)'" fxLayout="column" fxLayoutAlign.gt-md="start center"
+            fxLayoutAlign.lt-lg="center center" style="width:  510px;">
 
-            <ng-container *ngIf="!loading else loader">
-                <ng-container *ngFor="let post of posts">
-                    <app-card-post (click)="openQuestions()" [post]="post"
-                                   class="w-100">
-                    </app-card-post>
-                    <app-skeleton-post-card class="w-100"></app-skeleton-post-card>
+
+            <!--      BUYER    -->
+            <ng-template ngxPermissionsOnly="BUYER">
+
+                <ng-container *ngIf="!loading else loader">
+                    <ng-container *ngFor="let post of posts">
+                        <app-card-post (click)="openQuestions()" [post]="post" class="w-100">
+                        </app-card-post>
+                    </ng-container>
                 </ng-container>
-            </ng-container>
+
+            </ng-template>
+            <!--  END  BUYER    -->
+
+            <!--   SELLER       -->
+
+            <ng-template ngxPermissionsOnly="SELLER">
+                <div class="p-5 card mat-elevation-z9 w-100">
+                    <app-tela-seguradora></app-tela-seguradora>
+                </div>
+
+            </ng-template>
+            <!-- END  SELLER       -->
+
+
 
             <ng-template #loader>
                 <app-skeleton-post-card class="w-100"></app-skeleton-post-card>
@@ -41,11 +53,11 @@
     <!--    RIGHT CONTENT -->
     <div class="col-3" fxHide.lt-lg fxLayout="column" fxLayoutAlign="start start" style="padding: 25px 0">
         <div class="h-25 w-75 shadow-sm mb-4"
-             style="border: 1px solid #d1d1d1; border-radius: 15px; background-color: white">
+            style="border: 1px solid #d1d1d1; border-radius: 15px; background-color: white">
 
         </div>
         <div class="h-25 w-75 shadow-sm mb-4"
-             style="border: 1px solid #d1d1d1; border-radius: 15px; background-color: white">
+            style="border: 1px solid #d1d1d1; border-radius: 15px; background-color: white">
 
         </div>
     </div>

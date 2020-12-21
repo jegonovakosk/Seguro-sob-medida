@@ -17,7 +17,7 @@
 
     <!-- TEXTO -->
     <!--    <ng-container *ngIf="questions[position]?.type === 'TEXT'">-->
-    <ng-container *ngIf="questions[position]?.tipo ==='T'">
+    <ng-container *ngIf="questions[position]?.tipo === 'T'">
 
       <div>
         <mat-form-field appearance="outline">
@@ -27,6 +27,7 @@
       </div>
 
     </ng-container>
+
     <ng-container class="mat-button" *ngIf="questions[position]?.tipo === 'B'">
 
       <div *ngIf="questions[position]">
@@ -53,21 +54,6 @@
       </div>
     </ng-container>
   </ng-container>
-  <!-- CHECKBOX -->
-  <!--    <ng-container *ngIf="questions[position]?.type === 'COMBO'">-->
-
-  <!--      <div *ngIf="questions[position]"-->
-  <!--           fxLayout="column">-->
-  <!--        <ng-container *ngFor="let opcao of questions[position].opcoes">-->
-  <!--          <section>-->
-  <!--            <mat-checkbox (ngModelChange)="onChangeCheckBox($event)"-->
-  <!--                          [(ngModel)]="opcao.value"> {{ opcao.description }} </mat-checkbox>-->
-  <!--          </section>-->
-
-  <!--        </ng-container>-->
-  <!--      </div>-->
-  <!--    </ng-container>-->
-  <!--  </ng-container>-->
 
   <!-- FIM -->
   <ng-container *ngIf="questions.length === position">

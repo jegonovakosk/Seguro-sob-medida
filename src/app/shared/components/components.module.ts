@@ -21,6 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { ModalSolicitacaoComponent } from './modal-solicitacao/modal-solicitacao.component';
+import { ModalAdicionarInfoComponent } from './modal-adicionar-info/modal-adicionar-info.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ModalSolicitacaoComponent } from './modal-solicitacao/modal-solicitacao
     UserListComponent,
     SkeletonUserListComponent,
     ModalRespostaComponent,
-    ModalSolicitacaoComponent
+    ModalSolicitacaoComponent,
+    ModalAdicionarInfoComponent
   ],
   imports: [
     CommonModule,

@@ -21,7 +21,7 @@
 
                 <ng-container *ngIf="!loading else loader">
                     <ng-container *ngFor="let post of posts">
-                        <app-card-post (click)="openQuestions()" [post]="post" class="w-100">
+                        <app-card-post (click)="openNews()" [post]="post" class="w-100">
                         </app-card-post>
                     </ng-container>
                 </ng-container>
@@ -85,9 +85,11 @@
         <div class="h-25 w-75 shadow-sm mb-4"
             style="border: 1px solid #d1d1d1; border-radius: 15px; background-color: white">
 
-        </div>
-        <div class="h-25 w-75 shadow-sm mb-4"
-            style="border: 1px solid #d1d1d1; border-radius: 15px; background-color: white">
+          <div (click)="openQuestions()" class="py-4 px-3" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="15px"
+               style="cursor: pointer">
+            <span class="material-icons">library_add</span>
+            <span translate>Criar Solicitação Seguro</span>
+          </div>
 
         </div>
     </div>

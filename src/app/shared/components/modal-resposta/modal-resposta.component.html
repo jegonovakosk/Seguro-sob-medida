@@ -25,7 +25,7 @@
 
     <!-- TEXTO -->
     <!--    <ng-container *ngIf="questions[position]?.type === 'TEXT'">-->
-    <ng-container>
+    <ng-container *ngIf="questions[position]?.tipo === 'T'">
 
       <div *ngIf="questions[position]">
         <mat-form-field>
@@ -38,22 +38,30 @@
       </div>
 
     </ng-container>
+    <ng-container *ngIf="questions[position]?.tipo === 'B'">
+
+      <div *ngIf="questions[position]">
+        <button>SIm</button>
+        <button>Não</button>
+
+      </div>
+
+    </ng-container>
+
+    <ng-container *ngIf="questions[position]?.tipo === 'C'">
+
+      <div *ngIf="questions[position]"
+           fxLayout="column">
+        <ng-container *ngFor="let opcao of questions[position].opcoes">
+          <section>
+            <mat-checkbox (ngModelChange)="onChangeCheckBox($event)"
+                          [(ngModel)]="opcao.id"> {{ opcao.opcao }} </mat-checkbox>
+          </section>
+
+        </ng-container>
+      </div>
+    </ng-container>
   </ng-container>
-  <!-- CHECKBOX -->
-  <!--    <ng-container *ngIf="questions[position]?.type === 'COMBO'">-->
-
-  <!--      <div *ngIf="questions[position]"-->
-  <!--           fxLayout="column">-->
-  <!--        <ng-container *ngFor="let opcao of questions[position].opcoes">-->
-  <!--          <section>-->
-  <!--            <mat-checkbox (ngModelChange)="onChangeCheckBox($event)"-->
-  <!--                          [(ngModel)]="opcao.value"> {{ opcao.description }} </mat-checkbox>-->
-  <!--          </section>-->
-
-  <!--        </ng-container>-->
-  <!--      </div>-->
-  <!--    </ng-container>-->
-  <!--  </ng-container>-->
 
   <!-- FIM -->
   <ng-container *ngIf="questions.length === position">
@@ -70,7 +78,6 @@
 <ng-container *ngIf="questions.length !== position">
   <mat-dialog-actions fxLayoutAlign="space-between center ">
     <button (click)="onClickBack()"
-            [disabled]="false"
             [ngClass]="{'cancel-btn': position === 0, 'back-btn': position !== 0}"
             class="seg-btn-lt"
             mat-button
@@ -79,7 +86,6 @@
       {{ position === 0 ? 'Cancelar' : 'Voltar'}}
     </button>
     <button (click)="onClickNext()"
-            [disabled]="!questions[position]?.resposta"
             [ngClass]="{'next-btn': position !== questions.length - 1, 'finish-btn': position === questions.length - 1 }"
             class="seg-btn-lt"
             mat-button

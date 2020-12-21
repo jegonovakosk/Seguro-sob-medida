@@ -1,22 +1,14 @@
-<div fxLayout="column"
-     fxLayoutAlign="center unset"
-     mat-dialog-title
-     style="position: relative">
+<div fxLayout="column" fxLayoutAlign="center unset" mat-dialog-title style="position: relative">
 
-  <div (click)="onClickCloseModal()"
-       class="close"
-       fxLayoutAlign="unset end">
+  <div (click)="onClickCloseModal()" class="close" fxLayoutAlign="unset end">
     <mat-icon>close</mat-icon>
   </div>
 </div>
 
 
 <mat-dialog-content [ngClass.lt-md]="{'mat-size-md': true, 'mat-size-lt': false }"
-                    [ngClass.lt-sm]="{'mat-size-sm': true, 'mat-size-md': false }"
-                    class="mat-size-lt mat-typography"
-                    fxLayout="column"
-                    fxLayoutAlign="center center"
-                    fxLayoutGap="15px">
+  [ngClass.lt-sm]="{'mat-size-sm': true, 'mat-size-md': false }" class="mat-size-lt mat-typography" fxLayout="column"
+  fxLayoutAlign="center center" fxLayoutGap="15px">
   <!-- PERGUNTA -->
   <ng-container *ngIf="questions.length !== position">
     <div fxLayoutAlign="center none">
@@ -27,22 +19,22 @@
     <!--    <ng-container *ngIf="questions[position]?.type === 'TEXT'">-->
     <ng-container *ngIf="questions[position]?.tipo === 'T'">
 
-      <div *ngIf="questions[position]">
-        <mat-form-field>
-          <input [(ngModel)]="questions[position].resposta"
-                 autocomplete="off"
-                 matInput
-                 name="resposta">
+      <div>
+        <mat-form-field appearance="outline">
+          <input [(ngModel)]="questions[position].resposta" autocomplete="off" matInput name="resposta">
         </mat-form-field>
 
       </div>
 
     </ng-container>
-    <ng-container *ngIf="questions[position]?.tipo === 'B'">
+
+    <ng-container class="mat-button" *ngIf="questions[position]?.tipo === 'B'">
 
       <div *ngIf="questions[position]">
-        <button>SIm</button>
-        <button>Não</button>
+        <button (click)="onClickNext()" class="mat-button" style="width: 100px; " mat-flat-button
+          color="primary">SIm</button>
+        <button (click)="onClickNext()" class="mat-button" style="width: 100px; " mat-flat-button
+          color="warn">Não</button>
 
       </div>
 
@@ -50,12 +42,12 @@
 
     <ng-container *ngIf="questions[position]?.tipo === 'C'">
 
-      <div *ngIf="questions[position]"
-           fxLayout="column">
+      <div *ngIf="questions[position]" fxLayout="column">
         <ng-container *ngFor="let opcao of questions[position].opcoes">
           <section>
-            <mat-checkbox (ngModelChange)="onChangeCheckBox($event)"
-                          [(ngModel)]="opcao.id"> {{ opcao.opcao }} </mat-checkbox>
+            <mat-checkbox color="primary" (ngModelChange)="onChangeCheckBox($event)" [(ngModel)]="opcao.id"> {{
+              opcao.opcao }}
+            </mat-checkbox>
           </section>
 
         </ng-container>
@@ -66,10 +58,11 @@
   <!-- FIM -->
   <ng-container *ngIf="questions.length === position">
 
-    <h2>Pesquisa Realizada!</h2>
+    <h2>Enviar seu formulário a e aguarde á proposta da seguradora </h2>
 
-    <button style="width: 200px; height: 50px; background-color: blue; color: white; border-radius: 5px">
-      Compartilhar
+    <button (click)="onClickCloseModal()"
+      style="width: 200px; height: 50px; background-color: blue; color: #f6f6f6; border-radius: 5px">
+      Enviar
     </button>
   </ng-container>
 </mat-dialog-content>
@@ -77,22 +70,14 @@
 
 <ng-container *ngIf="questions.length !== position">
   <mat-dialog-actions fxLayoutAlign="space-between center ">
-    <button (click)="onClickBack()"
-            [ngClass]="{'cancel-btn': position === 0, 'back-btn': position !== 0}"
-            class="seg-btn-lt"
-            mat-button
-            ngClass.lt-md="seg-btn-md"
-            ngClass.lt-sm="seg-btn-sm">
+    <button (click)="onClickBack()" [ngClass]="{'cancel-btn': position === 0, 'back-btn': position !== 0}"
+      class="seg-btn-lt" mat-button ngClass.lt-md="seg-btn-md" ngClass.lt-sm="seg-btn-sm">
       {{ position === 0 ? 'Cancelar' : 'Voltar'}}
     </button>
     <button (click)="onClickNext()"
-            [ngClass]="{'next-btn': position !== questions.length - 1, 'finish-btn': position === questions.length - 1 }"
-            class="seg-btn-lt"
-            mat-button
-            ngClass.lt-md="seg-btn-md"
-            ngClass.lt-sm="seg-btn-sm">
+      [ngClass]="{'next-btn': position !== questions.length - 1, 'finish-btn': position === questions.length - 1 }"
+      class="seg-btn-lt" mat-button ngClass.lt-md="seg-btn-md" ngClass.lt-sm="seg-btn-sm">
       {{ position === questions.length - 1 ? 'Concluir' : 'Próxima'}}
     </button>
   </mat-dialog-actions>
 </ng-container>
-

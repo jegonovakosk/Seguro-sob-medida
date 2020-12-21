@@ -32,6 +32,7 @@ body {
   background-color: var(--body-background);
 
 }
+
 .icon-size {
   font-size: 25px;
 }
@@ -44,6 +45,7 @@ body {
   cursor: pointer;
   transition: 0.5s;
   color: var(--icon-color) !important;
+
   &:hover {
     color: var(--icon-hover) !important;
   }
@@ -52,9 +54,11 @@ body {
 .mat-form-field-appearance-legacy .mat-form-field-legacy {
   color: var(--text-color);
 }
+
 .mat-form-field-appearance-outline .mat-form-field-outline {
   color: var(--text-color);
 }
+
 /* Font color */
 input.mat-input-element {
   color: var(--text-color);
@@ -76,6 +80,7 @@ input.mat-input-element {
 .padding-sm {
   padding: 20px 40px !important;
 }
+
 .padding-xs {
   padding: 20px 20px !important;
 }
@@ -147,5 +152,5 @@ input.mat-input-element {
 .mat-dialog-container {
   overflow: hidden !important;
   border-radius: 5px !important;
-  background-color: plum !important;
+  background-color: #f6f6f6 !important;
 }

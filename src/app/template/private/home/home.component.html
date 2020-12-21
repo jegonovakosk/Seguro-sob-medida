@@ -9,14 +9,15 @@
     </div>
     <!--  END LEFT CONTENT  -->
     <!--  CENTER CONTENT    -->
-    <div [ngClass.gt-md]="{'col-6': true}" [ngClass.sm]="{'col-10': true}" [ngClass.xs]="{'col-10': true}"
+  <ng-template ngxPermissionsOnly="BUYER">
+
+  <div [ngClass.gt-md]="{'col-6': true}" [ngClass.sm]="{'col-10': true}" [ngClass.xs]="{'col-10': true}"
         fxLayoutAlign="center center">
         <div [ngStyle.xs]="'min-width: calc(100vw - 30px)'" fxLayout="column" fxLayoutAlign.gt-md="start center"
             fxLayoutAlign.lt-lg="center center" style="width:  510px;">
 
 
             <!--      BUYER    -->
-            <ng-template ngxPermissionsOnly="BUYER">
 
                 <ng-container *ngIf="!loading else loader">
                     <ng-container *ngFor="let post of posts">
@@ -25,7 +26,6 @@
                     </ng-container>
                 </ng-container>
 
-            </ng-template>
             <!--  END  BUYER    -->
 
             <!--   SELLER       -->
@@ -48,9 +48,40 @@
         </div>
 
     </div>
-    <!--  END CENTER CONTENT  -->
+  </ng-template>
+
+
+  <ng-template ngxPermissionsOnly="SELLER">
+
+  <div [ngClass.gt-md]="{'col-9': true}" [ngClass.sm]="{'col-10': true}" [ngClass.xs]="{'col-10': true}"
+        fxLayoutAlign="center center">
+        <div [ngStyle.xs]="'min-width: calc(100vw - 30px)'" fxLayout="column" fxLayoutAlign.gt-md="start center"
+            fxLayoutAlign.lt-lg="center center" class="w-100 p-5">
+
+            <!--   SELLER       -->
+
+                <div class="w-100">
+                    <app-tela-seguradora></app-tela-seguradora>
+                </div>
+
+            <!-- END  SELLER       -->
+
+            <ng-template #loader>
+                <app-skeleton-post-card class="w-100"></app-skeleton-post-card>
+                <app-skeleton-post-card class="w-100"></app-skeleton-post-card>
+                <app-skeleton-post-card class="w-100"></app-skeleton-post-card>
+            </ng-template>
+
+        </div>
+
+    </div>
+  </ng-template>
+
+  <!--  END CENTER CONTENT  -->
     <!--    RIGHT CONTENT -->
-    <div class="col-3" fxHide.lt-lg fxLayout="column" fxLayoutAlign="start start" style="padding: 25px 0">
+  <ng-template ngxPermissionsOnly="BUYER">
+
+  <div class="col-3" fxHide.lt-lg fxLayout="column" fxLayoutAlign="start start" style="padding: 25px 0">
         <div class="h-25 w-75 shadow-sm mb-4"
             style="border: 1px solid #d1d1d1; border-radius: 15px; background-color: white">
 
@@ -60,6 +91,7 @@
 
         </div>
     </div>
+  </ng-template>
     <!--  END RIGHT CONTENT -->
 
 </div>

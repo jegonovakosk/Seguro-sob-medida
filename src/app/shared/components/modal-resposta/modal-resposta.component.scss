@@ -49,7 +49,7 @@ mat-icon {
 
 
 .next-btn {
-  background-color: #54d854;
+  background-color: #8594E7;
 }
 
 .finish-btn {
@@ -57,9 +57,15 @@ mat-icon {
 }
 
 .back-btn {
-  background-color: var(--body-background);
+  background-color: #8594E7;
 }
 
 .cancel-btn {
   background-color: #ff4c4d;
+}
+
+.mat-button {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-right: 35px;
 }

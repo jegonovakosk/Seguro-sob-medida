@@ -4,7 +4,7 @@ export const themes = {
   primary: {
     '--text-color': '#212121',
     //cor de fundo do site 
-    '--body-background': '#ffffff', 
+    '--body-background': '#ffffff',
     '--body-color': 'black',
     //icone do login
     '--icon-color': '#003366',
@@ -28,7 +28,8 @@ export const themes = {
     '--footer-background': '#f6f6f6',
     //cor do footer
     '--nav-color': '#f6f6f6',
-    '--text-color-button': '#fff'
+    '--text-color-button': '#fff',
+    '--bg-inicial': '#8594E7'
   } as Theme,
   secondary: {
     '--text-color': '#d1d1d1',

@@ -4,7 +4,7 @@
             <div class="example-button-row">
 
                 <button (click)="showClientModel()" mat-button>Solicitações</button>
-                <button (click)="showPropostaModel()" mat-button>Enviar Proposta</button>
+                <button (click)="showPropostaModel()" mat-button>Propostas Aceitas</button>
             </div>
         </mat-toolbar-row>
     </mat-toolbar>
@@ -15,7 +15,8 @@
             <!-- Position Column -->
             <ng-container matColumnDef="nome">
                 <th mat-header-cell *matHeaderCellDef> Nome </th>
-                <td mat-cell *matCellDef="let element" (click)="openModalSolicitacao(element)"> {{element.user.name}} {{element.user.lastname}} </td>
+                <td mat-cell *matCellDef="let element" (click)="openModalSolicitacao(element)"> {{element.user.name}}
+                    {{element.user.lastname}} </td>
             </ng-container>
 
             <!-- Name Column -->

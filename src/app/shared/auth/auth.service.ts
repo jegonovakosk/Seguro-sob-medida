@@ -7,13 +7,13 @@ import { NgxPermissionsService } from 'ngx-permissions';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class AuthService {
   baseUrl = environment.baseUrl;
 
   constructor(private httpClient: HttpClient,
-              private router: Router,
-              private permissionsService: NgxPermissionsService) {
+    private router: Router,
+    private permissionsService: NgxPermissionsService) {
   }
 
 
@@ -67,6 +67,7 @@ export class AuthService {
     window.localStorage.removeItem(LocalStorage.LOGIN_STORAGE);
     this.router.navigate(['/tela-inicio']);
     this.permissionsService.loadPermissions(['NOT_LOGGED']);
+
   }
 
   getToken(): any {

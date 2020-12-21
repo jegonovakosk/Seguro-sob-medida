@@ -56,6 +56,10 @@ export class HomeComponent implements OnInit {
     }, 500);
   }
 
+  openNews(): void {
+    window.open('https://seguros.sompo.com.br/seguro-auto-porque-contratar', '_blank');
+  }
+
   useLanguage(language: string): void {
     this.translate.use(language);
   }

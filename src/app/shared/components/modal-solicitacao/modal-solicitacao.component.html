@@ -1,53 +1,26 @@
-<div fxLayout="column"
-     fxLayoutAlign="center unset"
-     mat-dialog-title
-     style="position: relative">
+<div fxLayout="column" fxLayoutAlign="center unset" mat-dialog-title style="position: relative">
 
-  <div (click)="onClickCloseModal()"
-       class="close"
-       fxLayoutAlign="unset end">
+  <div (click)="onClickCloseModal()" class="close" fxLayoutAlign="unset end">
     <mat-icon>close</mat-icon>
   </div>
 </div>
 
 
-<mat-dialog-content
-  style="min-width: 500px"
-  fxLayout="column"
-  fxLayoutAlign="center start"
-  fxLayoutGap="5px">
+<mat-dialog-content style="min-width: 500px" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="5px">
 
   <ng-container *ngIf="novaSolicitacao else info">
-    <div fxLayout="column"
-         class="w-70"
-         fxLayoutAlign="center start"
-         fxLayoutGap="5px">
+    <div fxLayout="column" class="w-70" fxLayoutAlign="center start" fxLayoutGap="5px">
       <mat-form-field>
-        <input [(ngModel)]="solicitation.inicio"
-               autocomplete="off"
-               class="w-100"
-               matInput
-               name="resposta"
-               placeholder="Inicio"
-               type="date">
+        <input [(ngModel)]="solicitation.inicio" autocomplete="off" class="w-100" matInput name="resposta"
+          placeholder="Inicio" type="date">
       </mat-form-field>
       <mat-form-field>
-        <input [(ngModel)]="solicitation.fim"
-               autocomplete="off"
-               matInput
-               name="resposta"
-               class="w-100"
-               placeholder="Fim"
-               type="date">
+        <input [(ngModel)]="solicitation.fim" autocomplete="off" matInput name="resposta" class="w-100"
+          placeholder="Fim" type="date">
       </mat-form-field>
       <mat-form-field>
-        <input [(ngModel)]="solicitation.valor"
-               autocomplete="off"
-               matInput
-               class="w-100"
-               name="resposta"
-               placeholder="Valor"
-               type="number">
+        <input [(ngModel)]="solicitation.valor" autocomplete="off" matInput class="w-100" name="resposta"
+          placeholder="Valor" type="number">
       </mat-form-field>
     </div>
 
@@ -72,13 +45,10 @@
 <!-- BOTÕES -->
 
 <mat-dialog-actions fxLayoutAlign="space-between center ">
-  <button mat-button>
+  <button mat-raised-button color="primary">
     {{ 'Rejeitar' }}
   </button>
-  <button (click)="criarProposta()"
-          mat-button
-  >
+  <button (click)="criarProposta()" mat-button mat-raised-button color="primary">
     {{ 'Criar Proposta' }}
   </button>
 </mat-dialog-actions>
-

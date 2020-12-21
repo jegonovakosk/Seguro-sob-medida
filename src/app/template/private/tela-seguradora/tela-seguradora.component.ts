@@ -17,6 +17,7 @@ export class TelaSeguradoraComponent implements OnInit {
   showClient = true;
   showProposta = false;
   solicitations = [];
+  propostas = [];
   displayedColumns: string[] = ['nome', 'cidade', 'veiculo', 'situação', 'e-mail'];
   dataSource = new MatTableDataSource<PeriodicElement>([]);
   displayedColumnsProposta: string[] = ['position', 'name', 'documento', 'contato'];
@@ -28,6 +29,11 @@ export class TelaSeguradoraComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.seguradoraService.getPropostas()
+      .subscribe(resp => {
+        console.log('PROPOS', resp);
+        this.propostas = resp.data;
+      }, error => console.log(error));
     this.seguradoraService.getSolicitacoes()
       .subscribe(resp => {
         console.log('SOLIC', resp);

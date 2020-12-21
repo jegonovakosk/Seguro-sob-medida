@@ -30,8 +30,8 @@ export class SeguradoraService {
     return this.httpClient.get(`${this.baseUrl}cobertura/1`);
   }
 
-  getFranquias(user): Observable<any> {
-    return this.httpClient.get(`${this.baseUrl}franquia/1`);
+  getPropostas(): Observable<any> {
+    return this.httpClient.get(`${this.baseUrl}proposta/`);
   }
 
   incluirCoberturaProposta(proposta): Observable<any> {

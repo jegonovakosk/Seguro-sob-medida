@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
+import { ModalSolicitacaoComponent } from './modal-solicitacao/modal-solicitacao.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MatInputModule } from '@angular/material/input';
     SkeletonPostCardComponent,
     UserListComponent,
     SkeletonUserListComponent,
-    ModalRespostaComponent
+    ModalRespostaComponent,
+    ModalSolicitacaoComponent
   ],
   imports: [
     CommonModule,

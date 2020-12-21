@@ -19,6 +19,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { TokenInterceptor } from './services/http.interceptor';
+import { SeguradoraService } from "./services/seguradora.service";
 
 
 export class HammerConfig extends HammerGestureConfig {
@@ -53,6 +54,7 @@ export class HammerConfig extends HammerGestureConfig {
     ],
     providers: [
         AuthService,
+        SeguradoraService,
         HttpClientModule,
         {
             provide: HAMMER_GESTURE_CONFIG,

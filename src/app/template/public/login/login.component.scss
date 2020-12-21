@@ -29,7 +29,7 @@
   }
 
   button {
-    width: 250px !important;
+    width: 250px;
     cursor: pointer;
     padding: 5px;
     color: var(--text-color);
@@ -50,7 +50,7 @@
     background-color: #f6f6f6;
     color: var(--text-color);
     border-radius: 5px;
-   
+
   }
 
   h1 {
@@ -81,7 +81,7 @@
   }
 }
 
-.logo{
+.logo {
   width: 150px;
   height: 120px;
 }

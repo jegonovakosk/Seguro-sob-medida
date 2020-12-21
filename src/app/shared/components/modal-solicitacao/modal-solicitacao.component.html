@@ -1,0 +1,84 @@
+<div fxLayout="column"
+     fxLayoutAlign="center unset"
+     mat-dialog-title
+     style="position: relative">
+
+  <div (click)="onClickCloseModal()"
+       class="close"
+       fxLayoutAlign="unset end">
+    <mat-icon>close</mat-icon>
+  </div>
+</div>
+
+
+<mat-dialog-content
+  style="min-width: 500px"
+  fxLayout="column"
+  fxLayoutAlign="center start"
+  fxLayoutGap="5px">
+
+  <ng-container *ngIf="novaSolicitacao else info">
+    <div fxLayout="column"
+         class="w-70"
+         fxLayoutAlign="center start"
+         fxLayoutGap="5px">
+      <mat-form-field>
+        <input [(ngModel)]="solicitation.inicio"
+               autocomplete="off"
+               class="w-100"
+               matInput
+               name="resposta"
+               placeholder="Inicio"
+               type="date">
+      </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="solicitation.fim"
+               autocomplete="off"
+               matInput
+               name="resposta"
+               class="w-100"
+               placeholder="Fim"
+               type="date">
+      </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="solicitation.valor"
+               autocomplete="off"
+               matInput
+               class="w-100"
+               name="resposta"
+               placeholder="Valor"
+               type="number">
+      </mat-form-field>
+    </div>
+
+  </ng-container>
+  <ng-template #info>
+    <span><b>Cliente:</b> {{solicitacao.user.name}} {{solicitacao.user.lastname}}</span>
+    <span><b>Veiculo:</b> {{solicitacao.veiculo.marca}} - {{solicitacao.veiculo.ano}}</span>
+    <span><b>Placa:</b> {{solicitacao.veiculo.placa}}</span>
+    <span><b>Situação:</b> {{solicitacao.veiculo.situacao}}</span>
+    <span><b>Ano Modelo:</b> {{solicitacao.veiculo.anoModelo}}</span>
+    <span><b>Cor:</b> {{solicitacao.veiculo.cor}}</span>
+    <ng-container *ngFor="let questao of solicitacao.questionario">
+      <span><b>{{questao.pergunta}}:</b> {{questao.resposta}}</span>
+    </ng-container>
+    <span><b>Coberturas:</b></span>
+    <ng-container *ngFor="let cobertura of solicitacao.cobertura">
+      <span><b>- {{cobertura.nome}}:</b></span>
+    </ng-container>
+  </ng-template>
+
+</mat-dialog-content>
+<!-- BOTÕES -->
+
+<mat-dialog-actions fxLayoutAlign="space-between center ">
+  <button mat-button>
+    {{ 'Rejeitar' }}
+  </button>
+  <button (click)="criarProposta()"
+          mat-button
+  >
+    {{ 'Criar Proposta' }}
+  </button>
+</mat-dialog-actions>
+
